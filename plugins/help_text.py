@@ -47,12 +47,12 @@ async def help_user(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
+                text="**Join Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
@@ -65,7 +65,7 @@ async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
     button4 = [[
-               InlineKeyboardButton("CLOSE🤐", callback_data="closeme")
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
               ]]
     markup4 = InlineKeyboardMarkup(button4)
 
@@ -83,12 +83,12 @@ async def about_meh(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
+                text="**Join Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
@@ -101,7 +101,7 @@ async def about_meh(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/about")
     button2 = [[
-               InlineKeyboardButton("CLOSE🤐", callback_data="closeme")
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
               ]]
     markup2 = InlineKeyboardMarkup(button2)
     await bot.send_message(
@@ -120,12 +120,12 @@ async def start(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               await update.reply_text("**Join Channel**")
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
+                text="**Join Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
@@ -137,11 +137,11 @@ async def start(bot, update):
 
     TRChatBase(update.from_user.id, update.text, "/start")
     button = [[
-               InlineKeyboardButton("ABOUT🎭", callback_data="about"),
-               InlineKeyboardButton("HELP📜", callback_data="help"),
+               InlineKeyboardButton("ABOUT", callback_data="about"),
+               InlineKeyboardButton("HELP", callback_data="help"),
               ],
               [
-               InlineKeyboardButton("CLOSE 🔐", callback_data="closeme"),
+               InlineKeyboardButton("CLOSE", callback_data="closeme"),
              ]]
     markup = InlineKeyboardMarkup(button)
     # logger.info(update)
@@ -160,12 +160,12 @@ async def upgrade(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
+                text="**Join Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
@@ -178,7 +178,7 @@ async def upgrade(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/upgrade")
     button3 = [[
-               InlineKeyboardButton("CLOSE🤐", callback_data="closeme")
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
               ]]
     markup3 = InlineKeyboardMarkup(button3)
 
