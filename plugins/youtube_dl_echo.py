@@ -37,7 +37,7 @@ async def echo(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are B A N N E D")
         return
-    # logger.info(update)
+  
     TRChatBase(update.from_user.id, update.text, "/echo")
 
     update_channel = Config.UPDATE_CHANNEL
@@ -61,10 +61,6 @@ async def echo(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-#    try:
-#        await update.forward(chat_id=Config.LOG_CHAN)
-#   except:
-#        pass
 
     try:
         await bot.send_message(
@@ -73,11 +69,7 @@ async def echo(bot, update):
     except Exception as error:
         logger.info(str(error))
         pass
-    # await bot.send_chat_action(
-    #     chat_id=update.chat.id,
-    #     action="typing"
-    # )
-    logger.info(update.from_user)
+
     url = update.text
     youtube_dl_username = None
     youtube_dl_password = None
@@ -162,7 +154,7 @@ async def echo(bot, update):
     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
     if e_response and "nonnumeric port" not in e_response:
         # logger.warn("Status : FAIL", exc.returncode, exc.output)
-        error_message = e_response.replace("Please report this issue to @Mrvishal_2k2.", "")
+        error_message = e_response.replace("Please report this issue to @David_Botz.", "")
         if "This video is only available for registered users." in error_message:
             error_message += Translation.SET_CUSTOM_USERNAME_PASSWORD
         await bot.send_message(
