@@ -33,7 +33,7 @@ from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["getlink1"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["anonupload"]))
 async def get_link1(bot, update):
     TRChatBase(update.from_user.id, update.text, "getlink1")
     if str(update.from_user.id) in Config.BANNED_USERS:
