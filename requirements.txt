@@ -10,8 +10,8 @@ https://github.com/Mrvishal2k2/pyrogram-old/archive/asyncio-dev.zip
 #https://github.com/pyrogram/pyrogram/archive/asyncio-dev.zip
 requests
 tgcrypto
-sqlalchemy
+sqlalchemy==1.3.20
 psycopg2-binary
 feedparser
-#youtube-dl
-git+git://github.com/Mrvishal2k2/youtube-dl-2.git
+youtube-dl
+#git+git://github.com/Mrvishal2k2/youtube-dl-2.git
