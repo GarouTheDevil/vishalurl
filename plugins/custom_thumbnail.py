@@ -174,7 +174,7 @@ async def show_thumbnail(bot, update):
         await bot.send_photo(
         chat_id=update.chat.id,
         photo=thumb_image_path,
-        caption="**✓ Thumbnail Saved Permanently.**"",
+        caption=""**✓ Thumbnail Saved Permanently.**"",
         reply_to_message_id=update.message_id
     )
 
