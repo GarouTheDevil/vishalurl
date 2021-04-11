@@ -1,8 +1,8 @@
 class Translation(object):
-    START_TEXT = """**This is URL Uploader Bot with Multiple features Please use help button to know about me** 🖥\n\n **Bot Maintained by @MrVishal_2k2**\n\n© @BotDunia"""
+    START_TEXT = """**This is URL Uploader Bot with Multiple features Please use help button to know about me** 🖥\n\n© @David_Botz"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
-    UPGRADE_TEXT = """**Free Service By @BotDunia**"""
+    UPGRADE_TEXT = """**Free Service By @David_Botz**"""
     FORMAT_SELECTION = "**Select the desired format**: <a href='{}'>**file size might be approximate**</a> \n**If you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons**.\nYou can use /deletethumbnail **to delete the auto-generated thumbnail**."
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
@@ -33,10 +33,10 @@ URL | filename | username | password"""
 🔅 Now u can Mirror Telegram File and get link
 
 Command help for mirroring files
-/getlink1 - File at anonymousfiles.io
-/getlink2 - File at Gofile.io
-/getlink3 - File at Ufile.io
-/getlink4 - File to bayfiles.io(Best)
+/anonupload - File at anonymousfiles.io
+/goupload - File at Gofile.io
+/ufileupload - File at Ufile.io
+/bayupload - File to bayfiles.io(Best)
 
 ~~✅JOIN @BotDunia 🎯~~**"""
     REPLY_TO_DOC_FOR_C2V = "**Reply to a Telegram media to convert**"
@@ -68,17 +68,17 @@ Free users only 1 request per 30 minutes.
     FILE_STRG = """👉 <a href="https://t.me/joinchat/AAAAAEl8lVTQP-l8OACwHw">**All Uploaded files are stored here**</a>"""
     AFTER_SUCCESSFUL_UPLOAD_MSG = """**Uploaded Successful✅**"""
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = """**Uploaded Successful😊✅**"""
-    AFTER_GET_DL_LINK = "**Direct Link generated** 👇\n \n{} \n \n<i>Generated link will expire in {} days.</i> \n\n @BotDunia."
+    AFTER_GET_DL_LINK = "**Direct Link generated** 👇\n \n{} \n \n<i>Generated link will expire in {} days.</i> \n\n @David_Botz"
     ABOUT_ME = """**MY DETAILS:**
 
-```🤖My Name:``` [UploadDuniaBot](https://t.me/UploadDuniaBot)
+```🤖My Name:``` [All in One](https://t.me/TheAllinOne_Robot)
     
 ```📝 Language:``` [Python 3](https://www.python.org/)
 
 ```🧰 Framework:``` [Pyrogram](https://github.com/pyrogram/pyrogram)
 
-```👨🏻‍💻 Developer:``` [MrVishal](https://t.me/Mrvishal_2k2)
+```👨🏻‍💻 Developer:``` [David](https://t.me/David_Botz)
                
-```📢 Channel:``` [BotDunia](https://t.me/BotDunia)
+```📢 Channel:``` [David Botz](https://t.me/David_Botz)
 
 """
