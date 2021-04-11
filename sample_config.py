@@ -35,5 +35,5 @@ class Config(object):
     DEF_WATER_MARK_FILE = ""
     # Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
-    LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001404079818"))
+    LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001145342921"))
     UPDATE_CHANNEL = "David_Botz"
