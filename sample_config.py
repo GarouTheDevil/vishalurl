@@ -35,6 +35,6 @@ class Config(object):
     # watermark file
     DEF_WATER_MARK_FILE = ""
     # Database url
-    DB_URI = os.environ.get("DATABASE_URL", "")
+    DB_URI = os.environ.get("DATABASE_URL"I, "")
     LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001273888861"))
-    UPDATE_CHANNEL = "BotDunia"
+    UPDATE_CHANNEL = "David_Botz"
