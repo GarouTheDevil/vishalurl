@@ -69,9 +69,7 @@ async def echo(bot, update):
     try:
         await bot.send_message(
         	   chat_id=Config.LOG_CHAN,
-        	   text=f"New Request 🥳🥳\nBot @UploadDuniaBot \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
-
-        	  
+        	   text=f"#NewRequest 🥳🥳 \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
     except Exception as error:
         logger.info(str(error))
         pass
