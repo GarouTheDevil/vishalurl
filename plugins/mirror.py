@@ -53,12 +53,12 @@ async def get_link3(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
+               await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
+                text="**Join Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
@@ -162,7 +162,7 @@ async def get_link3(bot, update):
                 print(rget.text)
 
         try:
-            button = [[InlineKeyboardButton("Link 🔗", url=t_response_arry)]]
+            button = [[InlineKeyboardButton("Download Link", url=t_response_arry)]]
             markup = InlineKeyboardMarkup(button)
             await bot.edit_message_text(
             chat_id=update.chat.id,
@@ -181,6 +181,6 @@ async def get_link3(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text="***Reply to a File to get file mirrored!!***",
+            text="**Reply To File To Get Link**",
             reply_to_message_id=update.message_id
         )
