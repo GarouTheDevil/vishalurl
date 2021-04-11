@@ -36,7 +36,7 @@ from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["getlink3"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["ufileupload"]))
 async def get_link3(bot, update):
     TRChatBase(update.from_user.id, update.text, "getlink3")
     if str(update.from_user.id) in Config.BANNED_USERS:
