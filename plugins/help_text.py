@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
+# Re-edited by Mrvishal2k2 and David
 
 # the logging things
 import logging
@@ -106,7 +107,7 @@ async def about_meh(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.ABOUT_ME,
-        parse_mode="html",
+        parse_mode="markdown",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id,
         reply_markup=markup2
@@ -184,7 +185,7 @@ async def upgrade(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.UPGRADE_TEXT,
-        parse_mode="html",
+        parse_mode="markdown",
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True,
         reply_markup=markup3
