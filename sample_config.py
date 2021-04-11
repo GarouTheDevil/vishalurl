@@ -6,8 +6,8 @@ class Config(object):
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
     # The Telegram API things
-    APP_ID = int(os.environ.get("APP_ID", 12345))
-    API_HASH = os.environ.get("API_HASH")
+    APP_ID = int(os.environ.get("APP_ID", 1543212))
+    API_HASH = os.environ.get("API_HASH", d47de4b25ddf79a08127b433de32dc84))
     # Get these values from my.telegram.org
     # Array to store users who are authorized to use the bot
     AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
@@ -36,5 +36,5 @@ class Config(object):
     DEF_WATER_MARK_FILE = ""
     # Database url
     DB_URI = os.environ.get("DATABASE_URL"I, "")
-    LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001273888861"))
+    LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001404079818"))
     UPDATE_CHANNEL = "David_Botz"
