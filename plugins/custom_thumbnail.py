@@ -165,7 +165,7 @@ async def show_thumbnail(bot, update):
             try:
                 await bot.send_message(
                 	   chat_id=update.chat.id,
-                	   text="No Thumbnail Found!!",
+                	   text="**No Thumbnail Found**",
                 	   reply_to_message_id=update.message_id
                 	   )
             except:
@@ -174,7 +174,7 @@ async def show_thumbnail(bot, update):
         await bot.send_photo(
         chat_id=update.chat.id,
         photo=thumb_image_path,
-        caption="This is the Saved Thumbnail!!!\nYou Can delete This by using /deletethumb command.",
+        caption="**✓ Thumbnail Saved Permanently.**"",
         reply_to_message_id=update.message_id
     )
 
