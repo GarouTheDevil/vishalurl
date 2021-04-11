@@ -33,7 +33,7 @@ from helper_funcs.display_progress import progress_for_pyrogram
 from pyrogram import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["getlink2"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["goupload"]))
 async def get_link2(bot, update):
     TRChatBase(update.from_user.id, update.text, "getlink2")
     if str(update.from_user.id) in Config.BANNED_USERS:
