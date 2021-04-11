@@ -38,7 +38,7 @@ Command help for mirroring files
 /ufileupload - File at Ufile.io
 /bayupload - File to bayfiles.io(Best)
 
-~~✅JOIN @BotDunia 🎯~~**"""
+~~✅JOIN @David_Botz🎯~~**"""
     REPLY_TO_DOC_FOR_C2V = "**Reply to a Telegram media to convert**"
     REPLY_TO_DOC_FOR_SCSS = "**Reply to a Telegram media to get screenshots**"
     REPLY_TO_DOC_FOR_RENAME_FILE = "**Reply to a Telegram media to /rename with custom thumbnail support**"
