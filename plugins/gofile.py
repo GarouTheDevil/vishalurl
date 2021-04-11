@@ -161,6 +161,6 @@ async def get_link2(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text="**Please reply to file to get gofile.io link!!**",
+            text="**Please Reply To File To Get Link**",
             reply_to_message_id=update.message_id
         )
