@@ -5,19 +5,19 @@ class Translation(object):
     ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
     # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
     UPGRADE_TEXT = """ 
-○ <b>My Name</b> : TheAllinOne_Robot
+○ **My Name** : TheAllinOne_Robot
 
-○ <b>Creator</b> : @David9010
+⁍ **Creator** : @David9010
 
-○ <b>Credits</b> : Everyone in this journey
+⁍ **Credits** : Everyone in this journey
 
-○ <b>Language</b> : Python3
+⁍ **Language** : Python3
 
-○ <b>Library</b> : docs.pyrogram.org
+⁍ **Library** : docs.pyrogram.org
 
-○ <b>Co-developer</b> : @Cyberw4rriors
+⁍ **Co-developer** : @MrVishal_2k2
 
-○ <b>Build Status</b> : V3.0 """
+⁍ **Build Status** : V3.0 """
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot .</b> \n<i>[ Join Channel :- @David_Botz ]</i>"
