@@ -5,7 +5,7 @@ class Translation(object):
     ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
     # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
     UPGRADE_TEXT = """ 
-○ **My Name** : TheAllinOne_Robot
+⁍ **My Name** : TheAllinOne_Robot
 
 ⁍ **Creator** : @David9010
 
