@@ -181,6 +181,6 @@ async def rename_doc(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
+            text=Translation.RENAME_FILE,
             reply_to_message_id=update.message_id
         )
