@@ -46,6 +46,10 @@ Please Join @David_Botz"""
 ⭕ <i>I Can Upload Media Files Remotely To Cloud Storages Such As Bayfiles , AnonymousFiles , GoFiles And More .</i>
 
 <b>Send /Upgrade For Free Limit</b>"""
+    BLOCK_LIST_TEXT = "This URL Is Blocked"
+    CHECKING_LINK = "<b>Processing...</b>⏳"
+    BANNED_USER_TEXT = "<b>You are Banned!</b>"
+    FORCE_SUBSCRIBE_TEXT = "<i>Join My Updates Channel For More Bots</i>"
     NO_CUSTOM_THUMB_NAIL_FOUND = "<b>No Custom ThumbNail Found.</b>"
     NO_VOID_FORMAT_FOUND = "<b>Link Cantains No Media File</b> \n\n<b>YouTubeDL</b> said: {}"
     USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
