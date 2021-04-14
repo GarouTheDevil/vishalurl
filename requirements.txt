@@ -12,6 +12,13 @@ requests
 tgcrypto
 sqlalchemy==1.3.20
 psycopg2-binary
+feedparser 
+sqlalchemy==1.3.20
+psycopg2-binary
+ffmpeg-python
+ffmpeg
+pyrogram
 feedparser
-#youtube-dl
-git+git://github.com/Mrvishal2k2/youtube-dl-2.git
+requests
+tgcrypto
+youtube-dl
