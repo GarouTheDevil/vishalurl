@@ -54,4 +54,4 @@ Please Join @David_Botz"""
     REPLY_TO_DOC_FOR_SCSS = "<b>Reply To A Telegram Media To Get Screenshots.</b>"
     RENAME_FILE = "Reply To A Telegram Media To Rename File.</b>"
     AFTER_GET_DL_LINK = "<b>Direct Link Generated 👇 \nGenerated link Will Expires In {1} days. \n©️ @David_Botz</b>"
-    
+    FREE_USER_LIMIT_Q_SZE = "<b>To Avoid Weight On Bot , 1 Request Per {} Minute. \nPlease Try Again After {} Seconds.</b>"
