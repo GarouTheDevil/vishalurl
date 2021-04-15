@@ -76,7 +76,7 @@ async def button(bot, update):
         mark1 = InlineKeyboardMarkup(test1)
 
         await update.message.delete()
-        await bot.send_message(chat_id=update.message.chat.id, text=Translation.ABOUT_ME, disable_web_page_preview=True, reply_to_message_id=update.message.reply_to_message.message_id, reply_markup=mark1)
+        await bot.send_message(chat_id=update.message.chat.id, text=Translation.UPGRADE_TEXT, disable_web_page_preview=True, reply_to_message_id=update.message.reply_to_message.message_id, reply_markup=mark1)
 
     if "help" in cb_data:
         test2 = [[
