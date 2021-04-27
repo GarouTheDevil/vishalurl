@@ -36,4 +36,4 @@ class Config(object):
     # Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
     LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001145342921"))
-    UPDATE_CHANNEL = "David_Botz"
+    UPDATE_CHANNEL = "TeluguCartoonWorld"
