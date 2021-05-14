@@ -70,7 +70,8 @@ async def button(bot, update):
 
     if "about" in cb_data:
         test1 = [[
-               InlineKeyboardButton("HOME", callback_data="home"),
+               InlineKeyboardButton("START", callback_data="home"),
+               InlineKeyboardButton("HELP", callback_data="help")
                InlineKeyboardButton("CLOSE", callback_data="closeme")
                 ]]
         mark1 = InlineKeyboardMarkup(test1)
@@ -80,7 +81,8 @@ async def button(bot, update):
 
     if "help" in cb_data:
         test2 = [[
-               InlineKeyboardButton("HOME", callback_data="home"),
+               InlineKeyboardButton("START", callback_data="home"),
+               InlineKeyboardButton("ABOUT", callback_data="about")
                InlineKeyboardButton("CLOSE", callback_data="closeme")
                 ]]
         mark2 = InlineKeyboardMarkup(test2)
