@@ -59,7 +59,6 @@ async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
     button4 = [[
-               InlineKeyboardButton("ABOUT", callback_data="about"),
                InlineKeyboardButton("CLOSE", callback_data="closeme")
               ]]
     markup4 = InlineKeyboardMarkup(button4)
@@ -97,7 +96,6 @@ async def about_meh(bot, update):
     TRChatBase(update.from_user.id, update.text, "/about")
     button2 = [[
                InlineKeyboardButton("CLOSE", callback_data="closeme"),
-               InlineKeyboardButton("HELP", callback_data="help"),
               ]]
     markup2 = InlineKeyboardMarkup(button2)
     await bot.send_message(
