@@ -5,18 +5,12 @@ class Translation(object):
     ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
     # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
     UPGRADE_TEXT = """ 
-⁍ **My Name** : TheAllinOne_Robot
-
-⁍ **Creator** : @David9010
-
+⁍ *Bot Name** : TheAllinOne_Robot
+⁍ **Modified** : @David9010
 ⁍ **Credits** : Everyone in this journey
-
 ⁍ **Language** : Python3
-
 ⁍ **Library** : docs.pyrogram.org
-
-⁍ **Co-developer** : @MrVishal_2k2
-
+⁍ **Co-Developer** : @MrVishal_2k2
 ⁍ **Build Status** : V3.0 """
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
@@ -34,7 +28,7 @@ class Translation(object):
     CUSTOM_CAPTION_UL_FILE = " "
     Free_User = """About Plans
 --------
-Made With Love SIR / MADAM , Use Freely Without Flooding.
+ Use Freely Without Flooding.
 Please Join @David_Botz"""
     HELP_USER ="""
 ⭕ <i>I Can Upload Direct Link Supported Video Formats Of <a href="https://rg3.github.io/youtube-dl/supportedsites.html">YouTube DL</a> To Telegram .</i>
