@@ -4,6 +4,7 @@ from urldownload import download_file
    from sample_config import Config
 else:
     from config import Config
+from config import TG_BOT_TOKEN, APIID, APIHASH, DOWNLOADPATH, USERNAME
 
 import os
 import time
