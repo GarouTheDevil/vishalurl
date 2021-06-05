@@ -1,7 +1,7 @@
 from telethon import TelegramClient, events, Button
 from urldownload import download_file
 
-from sample_config import TG_BOT_TOKEN, APIID, APIHASH, DOWNLOADPATH, USERNAME
+from sample_config import Config
 
 import os
 import time
@@ -11,7 +11,7 @@ import aiohttp
 from handlers import progress, humanbytes, time_formatter, convert_from_bytes
 import traceback
 
-bot = TelegramClient('David_Botz', APIID, APIHASH).start(bot_token=TG_BOT_TOKEN)
+bot = TelegramClient('David_Botz', API_ID, API_HASH).start(bot_token=TG_BOT_TOKEN)
 
 def get_date_in_two_weeks():
    
@@ -37,16 +37,6 @@ async def send_to_transfersh_async(file):
                     
     print("Link to download file (will be saved till {}):\n{}".format(final_date, download_link))
     return download_link, final_date, size_of_file
-
-
-@bot.on(events.NewMessage(pattern='/start'))
-async def start(event):
-    #send a message when the command /start is issued.
-    await event.respond('Hello, I am Upload Bot.\n\nSend me any direct link and reply it with /upload for upload it to Telegram as file.\n\nSend me any file and reply it with /transfersh to generate direct download link of that file.\n\nA bot by @Infinity_BOTs.',
-                         buttons=[
-                        [Button.url("Source Code", url="https://github.com/ImJanindu/TeleUploadBot"),
-                         Button.url("Dev", url="https://t.me/Infinity_BOTs")]])
-    raise events.StopPropagation
 
 @bot.on(events.NewMessage(pattern='/upload'))
 async def up(event):
@@ -105,7 +95,7 @@ async def tsh(event):
             download_link, final_date, size = await send_to_transfersh_async(file_path)
 
             zaman = str(time.time() - start)
-            await orta.edit(f"File Successfully Uploaded to TransferSh.\n\nLink 👉 {download_link}\nExpired Date 👉 {final_date}\n\nBy @Infinity_BOTs")
+            await orta.edit(f"File Successfully Uploaded to TransferSh.\n\nLink 👉 {download_link}\nExpired Date 👉 {final_date}")
         except Exception as e:
             traceback.print_exc()
             print(e)
