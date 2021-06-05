@@ -37,3 +37,6 @@ class Config(object):
     DB_URI = os.environ.get("DATABASE_URL", "")
     LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001145342921"))
     UPDATE_CHANNEL = "David_botz"
+    DOWNLOADPATH = os.environ.get("DOWNLOADPATH", "Downloads/")
+    USERNAME = os.environ.get("USERNAME", "David9010")
+
