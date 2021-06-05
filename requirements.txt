@@ -15,3 +15,5 @@ psycopg2-binary
 feedparser
 #youtube-dl
 git+git://github.com/Mrvishal2k2/youtube-dl-2.git
+telethon
+asyncio
