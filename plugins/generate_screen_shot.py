@@ -26,7 +26,7 @@ from helper_funcs.display_progress import progress_for_pyrogram
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["ss"]))
-async def convert_to_video(bot, update):
+async def generate_screen_shot(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
