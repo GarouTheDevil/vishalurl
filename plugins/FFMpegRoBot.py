@@ -32,7 +32,7 @@ from hachoir.parser import createParser
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["ffmpegrobot"]))
-async def convert_to_video(bot, update):
+async def ffmpegrobot_ad(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
