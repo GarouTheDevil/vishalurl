@@ -5,13 +5,13 @@ class Translation(object):
     ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
     # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
     UPGRADE_TEXT = """ 
-⁍ *Bot Name** : TheAllinOne_Robot
-⁍ **Modified** : @David9010
-⁍ **Credits** : Everyone in this journey
-⁍ **Language** : Python3
-⁍ **Library** : docs.pyrogram.org
-⁍ **Co-Developer** : @MrVishal_2k2
-⁍ **Build Status** : V3.0 """
+⁍ **Bot Name** : **TheAllinOne_Robot**
+⁍ **Modified** : **@David9010**
+⁍ **Credits** : **Everyone In This Journey**
+⁍ **Language** : **Python3**
+⁍ **Library** : **docs.pyrogram.org**
+⁍ **Co-Developer** : **@MrVishal_2k2**
+⁍ **Build Status** : **V4.0** """
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot .</b> \n<i>[ Join Channel :- @David_Botz ]</i>"
@@ -39,6 +39,7 @@ Please Join @David_Botz"""
 ⭕ <i>Generate Screenshots of Telegram Media Files .</i>
 ⭕ <i>I Can Upload Media Files Remotely To Bay files .</i>
 ⭕ <i>I Can Trim A Custom Thumbnail From Telegram Media . </i>
+⭕ <i>I Can Create A Album Thumbnail</i>
 
 <b><u>Cammands</b></u>
 /start - **Start Bot**
