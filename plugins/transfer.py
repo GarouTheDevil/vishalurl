@@ -1,9 +1,6 @@
 from telethon import TelegramClient, events, Button
 from urldownload import download_file
-
-from sample_config import Config
-from Config import TG_BOT_TOKEN, APP_ID, API_HASH, DOWNLOADPATH, USERNAME
-
+from config import BOTTOKEN, APIID, APIHASH, DOWNLOADPATH, USERNAME
 import os
 import time
 import datetime
@@ -12,9 +9,7 @@ import aiohttp
 from handlers import progress, humanbytes, time_formatter, convert_from_bytes
 import traceback
 
-bot = TelegramClient('David_Botz', APP_ID, API_HASH).start(bot_token=TG_BOT_TOKEN)
-
-def get_date_in_two_weeks():
+bot = TelegramClient('InfinityBots', APIID, APIHASH).start(bot_token=BOTTOKEN)
    
     #get maximum date of storage for file by returns date in two weeks
     today = datetime.datetime.today()
