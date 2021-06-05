@@ -2,6 +2,7 @@ from telethon import TelegramClient, events, Button
 from urldownload import download_file
 
 from sample_config import Config
+from config import TG_BOT_TOKEN, APP_ID, API_HASH, DOWNLOADPATH, USERNAME
 
 import os
 import time
