@@ -10,6 +10,8 @@ from handlers import progress, humanbytes, time_formatter, convert_from_bytes
 import traceback
 
 bot = TelegramClient('InfinityBots', APIID, APIHASH).start(bot_token=BOTTOKEN)
+
+def get_date_in_two_weeks():
    
     #get maximum date of storage for file by returns date in two weeks
     today = datetime.datetime.today()
