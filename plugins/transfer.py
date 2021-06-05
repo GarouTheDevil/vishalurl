@@ -11,7 +11,7 @@ import aiohttp
 from handlers import progress, humanbytes, time_formatter, convert_from_bytes
 import traceback
 
-bot = TelegramClient('David_Botz', APP_ID, API_HASH).start(bot_token=TG_BOT_TOKEN)
+bot = TelegramClient('David_Botz', API_ID, APP_HASH).start(bot_token=TG_BOT_TOKEN)
 
 def get_date_in_two_weeks():
    
