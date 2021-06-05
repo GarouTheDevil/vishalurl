@@ -246,7 +246,7 @@ async def storage_info(bot, update):
         )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["clearffmpegmedia"]))
 async def clear_media(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
@@ -285,13 +285,30 @@ async def clear_media(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["downloadmedia"]))
 async def download_media(bot, update):
-    if update.from_user.id not in Config.UPDATE_CHANNEL:
-        await bot.delete_messages(
+    if update.from_user.id in Config.BANNED_USERS:
+        await bot.send_message(
             chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
+            text=Translation.BANNED_USER_TEXT,
+            reply_to_message_id=update.message_id
         )
         return
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("**Your Banned**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**Join Channel**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+
     TRChatBase(update.from_user.id, update.text, "downloadmedia")
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if not os.path.exists(saved_file_path):
