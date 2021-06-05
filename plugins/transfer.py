@@ -1,6 +1,6 @@
 from telethon import TelegramClient, events, Button
 from urldownload import download_file
-from config import BOTTOKEN, APIID, APIHASH, DOWNLOADPATH, USERNAME
+from sample_config import TG_BOT_TOKEN, APIID, APIHASH, DOWNLOADPATH, USERNAME
 import os
 import time
 import datetime
@@ -9,7 +9,7 @@ import aiohttp
 from handlers import progress, humanbytes, time_formatter, convert_from_bytes
 import traceback
 
-bot = TelegramClient('David_Botz', APIID, APIHASH).start(bot_token=BOTTOKEN)
+bot = TelegramClient('David_Botz', APIID, APIHASH).start(bot_token=TG_BOT_TOKEN)
 
 def get_date_in_two_weeks():
    
