@@ -199,7 +199,7 @@ async def trim(bot, update):
         )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["storageinfo"]))
 async def storage_info(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
