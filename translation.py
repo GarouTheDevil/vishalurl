@@ -37,7 +37,25 @@ Please Join @David_Botz"""
 ⭕ <i>I Can Rename Telegram Files With Custom Thumbnail Support .</i>
 ⭕ <i>Send Me Images To Generate Custom Thumbnail .</i>
 ⭕ <i>Generate Screenshots of Telegram Media Files .</i>
-⭕ <i>I Can Upload Media Files Remotely To Cloud Storages Such As Bayfiles , AnonymousFiles , GoFiles And More .</i>
+⭕ <i>I Can Upload Media Files Remotely To Bay files .</i>
+⭕ <i>I Can Trim A Custom Thumbnail From Telegram Media . </i>
+
+<b><u>Cammands</b></u>
+/start - **Start Bot**
+/help - **Use For Help**
+/about - **About Bot**
+/upgrade - **For Free User Limt**
+/rename - **To Rename The Telegram Media File**
+/c2v - **To Convert File To Video**
+/c2f - **Convert Video To File**
+/Showthumbnail - **View Current Thumbnail**
+/deletethumbnail - **Delete Current Thumbnail**
+/bayupload - **Upload Telegram Media Remotely To BayFiles Cloud Storage**
+/trim - **To Trim A Custom Thumbnail From Telegram Media**
+/downloadmedia - **Download Media To My Server**
+/storageinfo - **Downloaded Media Information**
+/clearffmpegmedia - **Clear Downloaded Media From My Server**
+/generatecustomthumbnail - **Generate Album Thumbnail**
 
 <b>Send /Upgrade For Free Limit</b>"""
     BLOCK_LIST_TEXT = "This URL Is Blocked"
