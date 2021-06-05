@@ -134,6 +134,52 @@ async def trim(bot, update):
                     disable_web_page_preview=True,
                     message_id=a.message_id
                 )
+        elif len(commands) == 2:
+            # output should be screenshot
+            cmd, start_time = commands
+            o = await take_screen_shot(saved_file_path, Config.DOWNLOAD_LOCATION, start_time)
+            logger.info(o)
+            if o is not None:
+                await bot.edit_message_text(
+                    chat_id=update.chat.id,
+                    text=Translation.UPLOAD_START,
+                    message_id=a.message_id
+                )
+                c_time = time.time()
+                await bot.send_document(
+                    chat_id=update.chat.id,
+                    document=o,
+                    # thumb=thumb_image_path,
+                    # caption=description,
+                    # reply_markup=reply_markup,
+                    reply_to_message_id=update.message_id,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                        Translation.UPLOAD_START,
+                        a,
+                        c_time
+                    )
+                )
+                c_time = time.time()
+                await bot.send_photo(
+                    chat_id=update.chat.id,
+                    photo=o,
+                    # caption=Translation.CUSTOM_CAPTION_UL_FILE,
+                    reply_to_message_id=update.message_id,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                        Translation.UPLOAD_START,
+                        a,
+                        c_time
+                    )
+                )
+                os.remove(o)
+                await bot.edit_message_text(
+                    chat_id=update.chat.id,
+                    text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG,
+                    disable_web_page_preview=True,
+                    message_id=a.message_id
+                )
         else:
             await bot.edit_message_text(
                 chat_id=update.chat.id,
