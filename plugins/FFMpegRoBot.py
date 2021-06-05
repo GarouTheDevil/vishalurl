@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# (c) Shrimadhav U K
+
 # the logging things
 import logging
 logging.basicConfig(level=logging.DEBUG,
@@ -28,14 +32,31 @@ from hachoir.parser import createParser
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["ffmpegrobot"]))
-async def ffmpegrobot_ad(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
-        await bot.delete_messages(
+async def convert_to_video(bot, update):
+    if update.from_user.id in Config.BANNED_USERS:
+        await bot.send_message(
             chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
+            text=Translation.BANNED_USER_TEXT,
+            reply_to_message_id=update.message_id
         )
         return
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("**Your Banned**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**Join Channel**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+
     TRChatBase(update.from_user.id, update.text, "ffmpegrobot")
     await bot.send_message(
         chat_id=update.chat.id,
@@ -47,7 +68,7 @@ async def ffmpegrobot_ad(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 async def trim(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id not in Config.UPDATE_CHANNEL:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
@@ -163,7 +184,7 @@ async def trim(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["storageinfo"]))
 async def storage_info(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id not in Config.UPDATE_CHANNEL:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
@@ -193,7 +214,7 @@ async def storage_info(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["clearffmpegmedia"]))
 async def clear_media(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id not in Config.UPDATE_CHANNEL:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
@@ -213,7 +234,7 @@ async def clear_media(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["downloadmedia"]))
 async def download_media(bot, update):
-    if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id not in Config.UPDATE_CHANNEL:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
