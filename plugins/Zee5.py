@@ -38,7 +38,7 @@ from helper_funcs.zee5helper import DownLoadFile
 
 
 
-@Client.on_message(filters.private & filters.regex(pattern="/Zee5"))
+@Client.on_message(filters.private & Filters.regex(pattern="/Zee5"))
 async def zee5_capture(bot, update):
 
     if update.from_user.id in Config.BANNED_USERS:
