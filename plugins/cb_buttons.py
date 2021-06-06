@@ -42,9 +42,6 @@ from hachoir.parser import createParser
 from plugins.help_text import start, about_meh, upgrade, help_user
 from PIL import Image
 
-from plugins.zee5_dl import zee5_execute
-
-
 @pyrogram.Client.on_callback_query()
 async def button(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
