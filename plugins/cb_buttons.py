@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+import pyrogram
 import json
 import math
 import os
@@ -41,6 +42,8 @@ from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from plugins.help_text import start, about_meh, upgrade, help_user
 from PIL import Image
+from plugins.zee5_dl import zee5_execute
+
 
 @pyrogram.Client.on_callback_query()
 async def button(bot, update):
