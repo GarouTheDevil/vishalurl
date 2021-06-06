@@ -23,6 +23,7 @@ else:
 from translation import Translation
 from database.database import *
 
+import pyrogram
 from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
 
 from hachoir.metadata import extractMetadata
