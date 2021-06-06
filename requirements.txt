@@ -13,8 +13,7 @@ tgcrypto
 sqlalchemy==1.3.20
 psycopg2-binary
 feedparser
-#youtube-dl
-Youtube-dl
+youtube-dl
 telethon
 asyncio
 ffmpeg-python
