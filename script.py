@@ -27,5 +27,3 @@ class script(object):
     NO_THUMB = "<b>No Thumbnail Found</b>"
     
     CUSTOM_CAPTION_UL_FILE = "<b>File Name :- {newname}\n\n©️David_Botz</b>"
-    
-    TIMEOUT
