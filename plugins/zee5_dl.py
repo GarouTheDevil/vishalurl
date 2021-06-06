@@ -430,3 +430,12 @@ async def zee5_execute(bot, update):
     except:
         await update.reply_text("Couldn't download your video!", quote=True)
         logger.info('error in process') 
+
+@pyrogram.Client.on_callback_query()
+async def formatbuttons(bot, update):
+       
+    if "|" in update.data:
+        await zee5_execute(bot, update)
+        
+    elif "closeformat" in update.data:     
+        await update.message.delete() 
