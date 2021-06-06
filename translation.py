@@ -38,7 +38,7 @@ Please Join @David_Botz"""
 ⭕ <i>Send Me Images To Generate Custom Thumbnail .</i>
 ⭕ <i>Generate Screenshots of Telegram Media Files .</i>
 ⭕ <i>I Can Upload Media Files Remotely To Bay files .</i>
-⭕ <i>I Can Trim A Custom Thumbnail From Telegram Media . </i>
+⭕ <i>I Can Trim A Custom ScreenShot From Telegram Video . </i>
 ⭕ <i>I Can Create A Album Thumbnail</i>
 
 <b><u>Cammands</b></u>
