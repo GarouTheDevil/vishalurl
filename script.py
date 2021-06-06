@@ -1,53 +1,31 @@
 
 class script(object):
 
-    START_TEXT = """<b>Hai ,
-    
-I'm A simple Zee5 link downloader bot With Permanent Thumbnail Support💯.
-Please send me any Zee5 link, I can upload it to telegram as File/Video.
-Currently I'm in beta mode 🥺, If found any bugs, report @TroJanzSupport !
-Click <i>/help</i> for more details....</b>"""
+    START_TEXT = """<b>Hi , Iam All In One Bot </b>
+"""
+    RENAME_403_ERR = "<b>Sorry. Please Rename Again.</b>"
+    ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
+    # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
+    UPGRADE_TEXT = """ 
+⁍ **Bot Name** : **TheAllinOne_Robot**
+⁍ **Modified** : **@David9010**
+⁍ **Credits** : **Everyone In This Journey**
+⁍ **Language** : **Python3**
+⁍ **Library** : **docs.pyrogram.org**
+⁍ **Co-Developer** : **@MrVishal_2k2**
+⁍ **Build Status** : **V4.0** """
 
-
-    HELP_USER = """<b>Hai, Follow these steps..</b>
- 
-1. Send Custom Thumbnail (It will be saved permenantly!)
-2. Send your zee5 url and select desired option.
-NOTE: Download may take some time! So please wait for it to complete!"""
-
-
-    ABOUT_TEXT = """⭕️<b>My Name : TroJanZ Zee5 DL</b>
-⭕️<b>Creater :</b> @TroJanzHEX
-⭕️<b>Language :</b> <code>Python3</code>
-⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
-⭕️<b>Source Code :</b> 👉 <a href='https://github.com/TroJanzHEX/Zee5-Downloader'>Click Here</a>"""
-
-
-
-    FORMAT_SELECTION = """<b>Choose appropriate option</b> <a href='{}'>⬇️</a>
-🎞  - Stream format
-📁  - File format
-<i>NOTE : Taking high resolutions may result in files above 2GB and hence cannot Upload to TG. So better select a medium resolution.</i> 😇
-"""    
-    
-    UPGRADE_TEXT = "PING at @contactHEXbot"
-    
-    DOWNLOAD_START = "Trying to download to my server. This may take a while 😴"
-    
+    FORMAT_SELECTION = "<a href='{}'>File Size Might Be Approximate</a> \nSelect desired format 👇."
+    DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
+    RCHD_TG_API_LIMIT = "<b>Downloaded In {} Seconds.\nDetected File Size : {}\nSorry. Can't Upload File To Telegram If Size Is Greater Than 1.9GB.</b>"
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "<b>⭕Downloaded In</b> {} **Seconds.** \n💢<b>Uploaded In</b> {} **Seconds.**"
+    SAVED_CUSTOM_THUMB_NAIL = "<b>✓ Image Saved As Custom Thumbnail Successfully.</b>"
+    DEL_ETED_CUSTOM_THUMB_NAIL = "<b>✓ Custom thumbnail cleared succesfully.</b>"
+    SHOW_THUMB = "<b>This Is Your Thumbnail</b>"
     
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
-
-    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "**Thank you for Using Meh!! ❤️**"
+    NO_THUMB = "<b>No Thumbnail Found</b>"
     
-    SAVED_CUSTOM_THUMB_NAIL = "<b>✅Custom thumbnail Saved.\nThis thumbnail will be Permanent for all future uploads\n\nDo /delthumb to clear your thumbnail!</b>"
-    
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom Thumbnail cleared succesfully."
-    
-    SHOW_THUMB = "@TroJanzHEX\n\nUse /delthumb to clear this thumbnail."
-    
-    NO_THUMB = "SED😕 No saved thumbnails Found!!"
-    
-    CUSTOM_CAPTION_UL_FILE = "<b>{newname}\n\n©️ @TroJanzHEX</b>"
+    CUSTOM_CAPTION_UL_FILE = "<b>File Name :- {newname}\n\n©️David_Botz</b>"
     
     TIMEOUT
