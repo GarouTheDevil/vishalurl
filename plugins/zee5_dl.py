@@ -43,7 +43,7 @@ from plugins.helpers import(
 
 
 
-@pyrogram.Client.on_message(pyrogram.filters.regex(pattern="/zee5"))
+@Client.on_message(filters.private & filters.regex(pattern="/zee5"))
 async def zee5_capture(bot, update):
 
     if update.from_user.id in Config.BANNED_USERS:
