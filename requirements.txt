@@ -15,6 +15,5 @@ psycopg2-binary
 feedparser
 git+git://github.com/Mrvishal2k2/youtube-dl-2.git
 telethon
-asyncio
 ffmpeg-python
 ffmpeg
