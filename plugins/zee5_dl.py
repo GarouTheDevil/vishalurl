@@ -25,7 +25,7 @@ from script import script
 from database.database import *
 
 import pyrogram
-from pyrogram import Client, filters
+from pyrogram import Client, Filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from hachoir.metadata import extractMetadata
@@ -43,7 +43,7 @@ from plugins.helpers import(
 
 
 
-@Client.on_message(filters.private & filters.regex(pattern="/zee5"))
+@pyrogram.Client.on_message(pyrogram.Filters.regex(pattern="/zee5"))
 async def zee5_capture(bot, update):
 
     if update.from_user.id in Config.BANNED_USERS:
