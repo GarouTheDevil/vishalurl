@@ -19,3 +19,4 @@ telethon
 asyncio
 ffmpeg-python
 ffmpeg
+pyrogram==1.0.7
