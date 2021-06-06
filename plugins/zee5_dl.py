@@ -37,9 +37,6 @@ from helper_funcs.zee5helper import headers
 from helper_funcs.zee5helper import take_screen_shot
 from helper_funcs.zee5helper import DownLoadFile
 
-from plugins.zee5_dl import zee5_execute
-
-
 @pyrogram.Client.on_message(pyrogram.Filters.regex(pattern="/zee5"))
 async def zee5_capture(bot, update):
 
