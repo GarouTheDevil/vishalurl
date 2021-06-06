@@ -19,4 +19,3 @@ telethon
 asyncio
 ffmpeg-python
 ffmpeg
-youtube-dl
