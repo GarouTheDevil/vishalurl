@@ -160,7 +160,7 @@ async def zee5_capture(bot, update):
                 InlineKeyboardButton(
                     "✖️ CLOSE ✖️",
                      callback_data=(
-                        "closeformat").encode("UTF-8")
+                        "closeme").encode("UTF-8")
                 )
              ])
 
@@ -445,5 +445,5 @@ async def formatbuttons(bot, update):
 if "|" in update.data:
         await zee5_execute(bot, update)
         
-    elif "closeformat" in update.data:     
+    elif "closeme" in update.data:     
         await update.message.delete()
