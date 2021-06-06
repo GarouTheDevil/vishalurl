@@ -44,6 +44,14 @@ from plugins.help_text import start, about_meh, upgrade, help_user
 from PIL import Image
 from plugins.zee5_dl import zee5_execute
 
+@pyrogram.Client.on_callback_query()
+async def formatbuttons(bot, update):
+       
+    if "|" in update.data:
+        await zee5_execute(bot, update)
+        
+    elif "closeformat" in update.data:     
+        await update.message.delete()
 
 @pyrogram.Client.on_callback_query()
 async def button(bot, update):
