@@ -56,7 +56,7 @@ Please Join @David_Botz"""
 /downloadmedia - **Download Media To My Server**
 /storageinfo - **Downloaded Media Information**
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
-/generatecustomthumbnail - **Generate Album Thumbnail**
+/generatecustomthumbnail - **Generate Album Thumbnail [Merge Two Images]**
 
 <b>Send /Upgrade For Free Limit</b>"""
     BLOCK_LIST_TEXT = "This URL Is Blocked"
