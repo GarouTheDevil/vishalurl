@@ -114,9 +114,10 @@ async def get_link4(bot, update):
             
         try:
            b = await bot.send_message(
-                text=Translation.UPLOAD_START,
                 chat_id=update.chat.id,
                 reply_to_message_id=update.message_id
+                progress=progress_for_pyrogram,
+                progress_args=(Translation.UPLOAD_START, a, c_time)
             )
         except Exception as erro:
             logger.info(str(erro))
