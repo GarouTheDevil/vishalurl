@@ -24,6 +24,7 @@ else:
 from script import script
 from database.database import *
 
+import pyrogram
 from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
