@@ -36,7 +36,7 @@ async def send_to_transfersh_async(file):
     print("Link to download file (will be saved till {}):\n{}".format(final_date, download_link))
     return download_link, final_date, size_of_file
 
-@bot.on(events.NewMessage(pattern='/upload'))
+@Client.on_message(Filters.command(["/download"]))
 async def up(event):
     if event.reply_to_msg_id:
         start = time.time()
@@ -71,7 +71,7 @@ async def up(event):
 
     raise events.StopPropagation
 
-@bot.on(events.NewMessage(pattern='/transfersh'))
+@Client.on_message(Filters.command(["/transfer"]))
 async def tsh(event):
     if event.reply_to_msg_id:
         start = time.time()
