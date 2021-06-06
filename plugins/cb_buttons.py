@@ -42,7 +42,6 @@ from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from plugins.help_text import start, about_meh, upgrade, help_user
 from PIL import Image
-from plugins.zee5_dl import zee5_execute
 
 @pyrogram.Client.on_callback_query()
 async def button(bot, update):
@@ -96,9 +95,3 @@ async def button(bot, update):
         await youtube_dl_call_back(bot, update)
     elif "=" in cb_data:
         await ddl_call_back(bot, update)
-       
-    if "|" in update.data:
-        await zee5_execute(bot, update)
-        
-    elif "closeformat" in update.data:     
-        await update.message.delete()
