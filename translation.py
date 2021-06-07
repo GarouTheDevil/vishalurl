@@ -52,7 +52,7 @@ Please Join @David_Botz"""
 /Showthumbnail - **View Current Thumbnail**
 /deletethumbnail - **Delete Current Thumbnail**
 /bayupload - **Upload Telegram Media Remotely To BayFiles Cloud Storage**
-/trim - **To Trim A Custom Thumbnail From Telegram Media**
+/trim - **To Trim A Image Or Screenshot From Telegram Media**
 /downloadmedia - **Download Media To My Server**
 /storageinfo - **Downloaded Media Information**
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
