@@ -85,4 +85,4 @@ Please Join @David_Botz"""
     EXTRACT_ZIP_INTRO_THREE = "<b>Analyzing...⏳"
     UNZIP_SUPPORTED_EXTENSIONS = ("zip", "rar")
     EXTRACT_ZIP_ERRS_OCCURED = "<b>Error Occurred</b>"
-     EXTRACT_ZIP_STEP_TWO = "Select file_name To Upload From The Below Options"
+    EXTRACT_ZIP_STEP_TWO = "Select file_name To Upload From The Below Options"
