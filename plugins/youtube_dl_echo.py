@@ -34,12 +34,15 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 @pyrogram.Client.on_message(pyrogram.Filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
+    logger.info(update.from_user.id)
+    fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are B A N N E D")
         return
   
     TRChatBase(update.from_user.id, update.text, "/echo")
-
+   
+    url = update.text
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
         try:
