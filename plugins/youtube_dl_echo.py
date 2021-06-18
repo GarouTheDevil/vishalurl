@@ -72,8 +72,7 @@ async def echo(bot, update):
     except Exception as error:
         logger.info(str(error))
         pass
-
-   if update.from_user.id not in Config.AUTH_USERS:
+        if update.from_user.id not in Config.AUTH_USERS:
         # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
