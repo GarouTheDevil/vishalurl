@@ -65,21 +65,19 @@ async def rename_doc(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
-async def filter(bot, update):
-    if update.from_user.id not in AUTH_USERS:
-        if str(update.from_user.id) in ADL_BOT_RQ:
+if update.from_user.id not in Config.AUTH_USERS:
+        # restrict free users from sending more links
+        if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
-            previous_time = ADL_BOT_RQ[str(update.from_user.id)]
-            process_max_timeout = round(PROCESS_MAX_TIMEOUT/60)
-            present_time = round(PROCESS_MAX_TIMEOUT-(current_time - previous_time))
-            ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-            if round(current_time - previous_time) < PROCESS_MAX_TIMEOUT:
+            previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
+            process_max_timeout = round(Config.PROCESS_MAX_TIMEOUT/60)
+            present_time = round(Config.PROCESS_MAX_TIMEOUT-(current_time - previous_time))
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+            if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
                 await bot.edit_message_text(chat_id=update.chat.id, text=Translation.FREE_USER_LIMIT_Q_SZE.format(process_max_timeout, present_time), disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
                 return
         else:
-            ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-    file = update.media
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
 
     TRChatBase(update.from_user.id, update.text, "rename")
     if (" " in update.text) and (update.reply_to_message is not None):
