@@ -57,8 +57,7 @@ Please Join @David_Botz"""
 /storageinfo - **Downloaded Media Information**
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
 /generatecustomthumbnail - **Generate Album Thumbnail [Merge Two Images]**
-
-<b>Send /Upgrade For Free Limit</b>"""
+"""
     BLOCK_LIST_TEXT = "This URL Is Blocked"
     CHECKING_LINK = "<b>Processing...</b>⏳"
     BANNED_USER_TEXT = "<b>You are Banned!</b>"
