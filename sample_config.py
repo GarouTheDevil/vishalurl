@@ -39,4 +39,5 @@ class Config(object):
     UPDATE_CHANNEL = "David_botz"
     DOWNLOADPATH = os.environ.get("DOWNLOADPATH", "Downloads/")
     USERNAME = os.environ.get("USERNAME", "David9010")
-
+    # dict to hold the ReQuest queue
+    ADL_BOT_RQ = {}
