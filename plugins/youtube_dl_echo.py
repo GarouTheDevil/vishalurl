@@ -50,7 +50,7 @@ async def echo(bot, update):
             await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
             return
             
-            try:
+       try:
         await bot.send_message(
         	   chat_id=Config.LOG_CHAN,
         	   text=f"#NewRequest 🥳🥳 \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
