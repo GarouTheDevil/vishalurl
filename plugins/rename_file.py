@@ -88,7 +88,7 @@ async def filter(bot, update):
             if round(current_time - previous_time) < PROCESS_MAX_TIMEOUT:
                 await bot.send_message(
                     chat_id=update.chat.id,
-                    text=Transition.Free_User_Limit
+                    text=Transition.FREE_USER_LIMIT_Q_SZE
                     disable_web_page_preview=True,
                     parse_mode="html",
                     reply_to_message_id=update.message_id
