@@ -86,13 +86,7 @@ async def filter(bot, update):
             present_time = round(PROCESS_MAX_TIMEOUT-(current_time - previous_time))
             ADL_BOT_RQ[str(update.from_user.id)] = time.time()
             if round(current_time - previous_time) < PROCESS_MAX_TIMEOUT:
-                await bot.send_message(
-                    chat_id=update.chat.id,
-                    text=Transition.FREE_USER_LIMIT_Q_SZE
-                    disable_web_page_preview=True,
-                    parse_mode="html",
-                    reply_to_message_id=update.message_id
-                )
+                await bot.edit_message_text(chat_id=update.chat.id, text=Translation.FREE_USER_LIMIT_Q_SZE.format(process_max_timeout, present_time), disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
                 return
         else:
             ADL_BOT_RQ[str(update.from_user.id)] = time.time()
