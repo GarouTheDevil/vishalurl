@@ -79,8 +79,7 @@ if update.from_user.id not in Config.AUTH_USERS:
         else:
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
             file = update.media
-    try:
-    TRChatBase(update.from_user.id, update.text, "rename")
+    
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
         if len(file_name) > 64:
