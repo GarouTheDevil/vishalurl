@@ -49,6 +49,16 @@ async def echo(bot, update):
         except Exception:
             await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
             return
+            
+            try:
+        await bot.send_message(
+        	   chat_id=Config.LOG_CHAN,
+        	   text=f"#NewRequest 🥳🥳 \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
+    except Exception as error:
+        logger.info(str(error))
+        pass
+  
+
     if update.from_user.id not in Config.AUTH_USERS:
         # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
