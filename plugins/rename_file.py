@@ -76,6 +76,28 @@ async def rename_doc(bot, update):
                 )
             )
             return
+@pyrogram.Client.on_message(filters.private & (filters.audio | filters.document | filters.animation | filters.video | filters.voice | filters.video_note))
+async def filter(bot, update):
+    if update.from_user.id not in AUTH_USERS:
+        if str(update.from_user.id) in ADL_BOT_RQ:
+            current_time = time.time()
+            previous_time = ADL_BOT_RQ[str(update.from_user.id)]
+            process_max_timeout = round(PROCESS_MAX_TIMEOUT/60)
+            present_time = round(PROCESS_MAX_TIMEOUT-(current_time - previous_time))
+            ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+            if round(current_time - previous_time) < PROCESS_MAX_TIMEOUT:
+                await bot.send_message(
+                    chat_id=update.chat.id,
+                    text=Transition.Free_User_Limit
+                    disable_web_page_preview=True,
+                    parse_mode="html",
+                    reply_to_message_id=update.message_id
+                )
+                return
+        else:
+            ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+    file = update.media
+
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
