@@ -65,7 +65,7 @@ async def rename_doc(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-@pyrogram.Client.on_message(Filters.private & (Filters.audio | Filters.document | Filters.animation | Filters.video | Filters.voice | Filters.video_note))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
 async def filter(bot, update):
     if update.from_user.id not in AUTH_USERS:
         if str(update.from_user.id) in ADL_BOT_RQ:
