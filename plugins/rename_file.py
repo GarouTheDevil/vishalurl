@@ -65,17 +65,6 @@ async def rename_doc(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-    TRChatBase(update.from_user.id, update.text, "rename")
-    if (" " in update.text) and (update.reply_to_message is not None):
-        cmd, file_name = update.text.split(" ", 1)
-        if len(file_name) > 64:
-            await update.reply_text(
-                Translation.IFLONG_FILE_NAME.format(
-                    alimit="64",
-                    num=len(file_name)
-                )
-            )
-            return
 @pyrogram.Client.on_message(filters.private & (filters.audio | filters.document | filters.animation | filters.video | filters.voice | filters.video_note))
 async def filter(bot, update):
     if update.from_user.id not in AUTH_USERS:
@@ -92,7 +81,17 @@ async def filter(bot, update):
             ADL_BOT_RQ[str(update.from_user.id)] = time.time()
     file = update.media
 
-       try:
+    TRChatBase(update.from_user.id, update.text, "rename")
+    if (" " in update.text) and (update.reply_to_message is not None):
+        cmd, file_name = update.text.split(" ", 1)
+        if len(file_name) > 64:
+            await update.reply_text(
+                Translation.IFLONG_FILE_NAME.format(
+                    alimit="64",
+                    num=len(file_name)
+                )
+            )
+            return
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
