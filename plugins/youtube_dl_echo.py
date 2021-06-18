@@ -36,43 +36,20 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 async def echo(bot, update):
     logger.info(update.from_user.id)
     fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
-    if update.from_user.id in Config.BANNED_USERS:
-        await update.reply_text("You are B A N N E D")
-        return
-  
-    TRChatBase(update.from_user.id, update.text, "/echo")
-   
     url = update.text
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
+    if Config.UPDATE_CHANNEL:
         try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
+            user = await bot.get_chat_member(Config.UPDATE_CHANNEL, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text("Your Banned")
-               return
+              await bot.edit_message_text(text=Translation.BANNED_USER_TEXT, message_id=fmsg.message_id)
+              return
         except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join My Updates Channel**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
+            await bot.edit_message_text(chat_id=update.chat.id, text=Translation.FORCE_SUBSCRIBE_TEXT, message_id=fmsg.message_id, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url=f"https://telegram.me/{Config.UPDATE_CHANNEL}")]]))
             return
-        except Exception as error:
-            logger.info(str(error))
-            await update.reply_text("Something Wrong. Contact my Support Group")
+        except Exception:
+            await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
             return
-
-
-    try:
-        await bot.send_message(
-        	   chat_id=Config.LOG_CHAN,
-        	   text=f"#NewRequest 🥳🥳 \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
-    except Exception as error:
-        logger.info(str(error))
-        pass
-        if update.from_user.id not in Config.AUTH_USERS:
+    if update.from_user.id not in Config.AUTH_USERS:
         # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
