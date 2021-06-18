@@ -63,13 +63,6 @@ async def echo(bot, update):
                 return
         else:
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-              try:
-        await bot.send_message(
-        	   chat_id=Config.LOG_CHAN,
-        	   text=f"#NewRequest 🥳🥳 \nFrom user👇 \n{update.from_user.id} @{update.from_user.username} \nUser 👉 {update.from_user.mention()} \nLink Requested 🔗 👇\n{update.text} ")
-    except Exception as error:
-        logger.info(str(error))
-        pass
 
     youtube_dl_username = None
     youtube_dl_password = None
