@@ -92,6 +92,7 @@ async def filter(bot, update):
             ADL_BOT_RQ[str(update.from_user.id)] = time.time()
     file = update.media
 
+       try:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
