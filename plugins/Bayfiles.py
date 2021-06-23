@@ -42,25 +42,6 @@ async def get_link4(bot, update):
             parse_mode=pyrogram.ParseMode.HTML
         )
         return
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("**Your Banned**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join Channel**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
 
     logger.info(update.from_user)
     if update.reply_to_message is not None:
@@ -137,7 +118,7 @@ async def get_link4(bot, update):
                 print ( t_response )
                 t_response_arry = json.loads(t_response.decode("UTF-8").split("\n")[-1].strip())['data']['file']['url']['short']
         try:
-            button = [[InlineKeyboardButton("Link", url=t_response_arry)]]
+            button = [[InlineKeyboardButton("Download Link", url=t_response_arry)]]
             markup = InlineKeyboardMarkup(button)
             await bot.edit_message_text(
             chat_id=update.chat.id,
