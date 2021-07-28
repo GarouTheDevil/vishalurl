@@ -2,7 +2,7 @@ import os
 import logging
 import pyrogram
 from pyrogram import Filters, Client
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
 from config import Config
 
