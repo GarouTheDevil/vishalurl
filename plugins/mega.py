@@ -1,7 +1,7 @@
 import os
 import logging
 import pyrogram
-from pyrogram import Filters, Client, idle
+from pyrogram import Filters, Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
 from config import Config
@@ -40,4 +40,3 @@ async def meganz(_, message):
 
 
 bot.start()
-idle()
