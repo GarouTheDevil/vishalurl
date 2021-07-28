@@ -23,7 +23,7 @@ bot = Client(
 )
 
 # mega download
-@pyrogram.Client.on_message(pyrogram.Filters.command([".*http.*"]))
+@bot.on_message(pyrogram.Filters.command([".*http.*"]))
 async def meganz(_, message):
     input = message.text
     user = message.from_user.mention
