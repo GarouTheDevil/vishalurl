@@ -3,7 +3,9 @@ import logging
 from pyrogram import filters, Client, idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
-from sample_config import Config
+    from sample_config import Config
+else:
+    from config import Config
 
 # mega client
 mega = Mega()
