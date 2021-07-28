@@ -1,6 +1,6 @@
 import os
 import logging
-from pyrogram import filters, Client, idle
+from pyrogram import Filters, Client, idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
 from config import Config
@@ -21,7 +21,7 @@ bot = Client(
 )
 
 # mega download
-bot.on_message(filters.command("mega") & filters.private)
+bot.on_message(Filters.command("mega") & Filters.private)
 async def meganz(_, message):
     input = message.text
     user = message.from_user.mention
