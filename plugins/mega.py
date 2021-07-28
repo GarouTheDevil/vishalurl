@@ -23,7 +23,7 @@ bot = Client(
 )
 
 # mega download
-bot.on_message(Filters.command("mega") & Filters.private)
+@bot.on_message(filters.regex(pattern="https://mega.nz/") & filters.private)
 async def meganz(_, message):
     input = message.text
     user = message.from_user.mention
