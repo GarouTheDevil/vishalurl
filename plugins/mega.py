@@ -1,5 +1,6 @@
 import os
 import logging
+import pyrogram
 from pyrogram import Filters, Client, idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
