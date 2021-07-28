@@ -4,9 +4,8 @@ import pyrogram
 from pyrogram import Filters, Client
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from mega import Mega
-    from sample_config import Config
-else:
-    from config import Config
+
+from sample_config import Config
 
 # mega client
 mega = Mega()
