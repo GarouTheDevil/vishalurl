@@ -23,8 +23,39 @@ bot = Client(
 )
 
 # mega download
-@bot.on_message(Filters.private & Filters.regex(pattern="https://mega.nz/"))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["mega"]))
 async def meganz(_, message):
+
+    TRChatBase(update.from_user.id, update.text, "mega")
+    if str(update.from_user.id) in Config.BANNED_USERS:
+        await bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.ABUSIVE_USERS,
+            reply_to_message_id=update.message_id,
+            disable_web_page_preview=True,
+            parse_mode=pyrogram.ParseMode.HTML
+        )
+        return
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("**Your Banned**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**Join Channel**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
+
     input = message.text
     user = message.from_user.mention
     msg = await message.reply_text("**Downloading ⬇️**")
