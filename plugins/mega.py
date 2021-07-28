@@ -38,3 +38,5 @@ async def meganz(_, message):
     await bot.send_document(message.chat.id, file, caption=cap)
     await msg.delete()
     os.remove(file)
+
+bot.run()
