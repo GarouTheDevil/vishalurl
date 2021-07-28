@@ -17,3 +17,6 @@ git+git://github.com/Mrvishal2k2/youtube-dl-2.git
 telethon
 ffmpeg-python
 ffmpeg
+mega.py
+
+
