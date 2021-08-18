@@ -36,8 +36,8 @@ class Config(object):
     # Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
     LOG_CHAN = int(os.environ.get("LOG_CHAN", "-1001145342921"))
-    UPDATE_CHANNEL = "David_botz"
+    UPDATE_CHANNEL = "DevilBotz"
     DOWNLOADPATH = os.environ.get("DOWNLOADPATH", "Downloads/")
-    USERNAME = os.environ.get("USERNAME", "David9010")
+    USERNAME = os.environ.get("USERNAME", "David9010") 
     # dict to hold the ReQuest queue
     ADL_BOT_RQ = {}
