@@ -14,7 +14,7 @@ class Translation(object):
 ⁍ **Build Status** : **V4.0** """
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot .</b> \n<i>[ Join Channel :- @David_Botz ]</i>"
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "<b>⭕Downloaded In</b> {} **Seconds.** \n💢<b>Uploaded In</b> {} **Seconds.**"
     SAVED_CUSTOM_THUMB_NAIL = "<b>✓ Image Saved As Custom Thumbnail Successfully.</b>"
     DEL_ETED_CUSTOM_THUMB_NAIL = "<b>✓ Custom thumbnail cleared succesfully.</b>"
@@ -28,8 +28,7 @@ class Translation(object):
     CUSTOM_CAPTION_UL_FILE = " "
     Free_User = """About Plans
 --------
- Use Freely Without Flooding.
-Please Join @David_Botz"""
+ Use Freely Without Flooding"""
     HELP_USER ="""
 ⭕ <i>I Can Upload Direct Link Supported Video Formats Of <a href="https://rg3.github.io/youtube-dl/supportedsites.html">YouTube DL</a> To Telegram .</i>
 ⭕ <i>I Can Upload Direct HTTP Link As A Media File To Telegram .</i>
@@ -69,7 +68,7 @@ Please Join @David_Botz"""
     REPLY_TO_DOC_FOR_C2V = "<b>Reply To a Telegram Media To Convert In To Streamable Video.</b>"
     REPLY_TO_DOC_FOR_SCSS = "<b>Reply To A Telegram Media To Get Screenshots.</b>"
     RENAME_FILE = "Reply To A Telegram Media To Rename File.</b>"
-    AFTER_GET_DL_LINK = "<b>Direct Link Generated 👇 \nGenerated link Will Expires In {1} days. \n©️ @David_Botz</b>"
+    AFTER_GET_DL_LINK = "<b>Direct Link Generated 👇 \nGenerated link Will Expires In {1} days</b>"
     FREE_USER_LIMIT_Q_SZE = "<b>To Avoid Weight On Bot , 1 Request Per {} Minute. \nPlease Try Again After {} Seconds.</b>"
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "<b>✓ Media Cleared Succesfully</b>"
     SAVED_RECVD_DOC_FILE = "<b>✓ Downloaded Successfully</b>"
