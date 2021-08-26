@@ -30,18 +30,34 @@ from helper_funcs.display_progress import progress_for_pyrogram
 from pyrogram import Client, Filters, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@Client.on_message(Filters.command(["bayupload"]))
-async def get_link4(bot, update):
-    TRChatBase(update.from_user.id, update.text, "getlink4")
-    if str(update.from_user.id) in Config.BANNED_USERS:
+@pyrogram.Client.on_message(pyrogram.Filters.command(["bayupload"]))
+async def convert_to_file(bot, update):
+    if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.ABUSIVE_USERS,
-            reply_to_message_id=update.message_id,
-            disable_web_page_preview=True,
-            parse_mode=pyrogram.ParseMode.HTML
+            text=Translation.BANNED_USER_TEXT,
+            reply_to_message_id=update.message_id
         )
         return
+    update_channel = Config.UPDATE_CHANNEL
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text("**Your Banned**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="**Join Channel**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return
 
     logger.info(update.from_user)
     if update.reply_to_message is not None:
