@@ -4,14 +4,9 @@ class Translation(object):
     RENAME_403_ERR = "<b>Sorry. Please Rename Again.</b>"
     ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
     # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
-    UPGRADE_TEXT = """ 
-⁍ **Bot Name** : **TheAllinOne_Robot**
-⁍ **Modified** : **@David9010**
-⁍ **Credits** : **Everyone In This Journey**
-⁍ **Language** : **Python3**
-⁍ **Library** : **docs.pyrogram.org**
-⁍ **Co-Developer** : **@MrVishal_2k2**
-⁍ **Build Status** : **V4.0** """
+    UPGRADE_TEXT = """
+**A Modified Multiple Functional Bot**
+"""
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot</b>"
