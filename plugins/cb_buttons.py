@@ -39,7 +39,7 @@ from plugins.dl_button import ddl_call_back
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
-from plugins import Cammand
+from plugins.cammand import Cammand
 from PIL import Image
 
 @Client.on_callback_query()
