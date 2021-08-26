@@ -62,8 +62,8 @@ async def button(bot, update):
         )
     elif update.data == "about":
         await update.message.edit_text(
-            text=Cammand.UPGRADE_TEXT,
-            reply_markup=help_text.ABOUT_BUTTONS,
+            text=Transition.UPGRADE_TEXT,
+            reply_markup=Cammand.ABOUT_BUTTONS,
             disable_web_page_preview=True
         )
     else:
