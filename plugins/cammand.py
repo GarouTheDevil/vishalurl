@@ -2,6 +2,15 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 class Cammand(object):
 
+START_TEXT = """<b>Hi , Iam All In One Bot </b>
+"""
+    RENAME_403_ERR = "<b>Sorry. Please Rename Again.</b>"
+    ABS_TEXT = "<b>Please Don't Be Selfish.</b>"
+    # UPGRADE_TEXT = "<b>Please Try Again Or Contact My Master --> @David9010</b>"
+    UPGRADE_TEXT = """
+**A Modified Multiple Functional Bot**
+"""
+
 START_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('HELP', callback_data='help'),
