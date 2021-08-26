@@ -1,7 +1,7 @@
 import os
 
 class Config(object):
-    CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "ANYTHING")
+    
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "1479608424:AAFWwiDaPc9md1V1juIEtv7BXeXVbsyi6eY")
     # The Telegram API things
@@ -18,8 +18,7 @@ class Config(object):
     MAX_FILE_SIZE = 50000000
     TG_MAX_FILE_SIZE = 2097152000
     FREE_USER_MAX_FILE_SIZE = 50000000
-    # chunk size that should be used with requests
-    CHUNK_SIZE = 128
+    
     # default thumbnail to be used in the videos
     DEF_THUMB_NAIL_VID_S = os.environ.get("DEF_THUMB_NAIL_VID_S", "")
     # proxy for accessing youtube-dl in GeoRestricted Areas
