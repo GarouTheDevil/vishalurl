@@ -39,7 +39,7 @@ from plugins.dl_button import ddl_call_back
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
-from plugins import help_text
+from plugins import Cammand
 from PIL import Image
 
 @Client.on_callback_query()
@@ -51,18 +51,18 @@ async def button(bot, update):
     elif update.data == "home":
         await update.message.edit_text(
             text=Translation.START_TEXT.format(update.from_user.mention),
-            reply_markup=help_text.START_BUTTONS,
+            reply_markup=Cammand.START_BUTTONS,
             disable_web_page_preview=True
         )
     elif update.data == "help":
         await update.message.edit_text(
             text=Translation.HELP_USER,
-            reply_markup=help_text.HELP_BUTTONS,
+            reply_markup=Cammand.HELP_BUTTONS,
             disable_web_page_preview=True
         )
     elif update.data == "about":
         await update.message.edit_text(
-            text=Translation.UPGRADE_TEXT,
+            text=Cammand.UPGRADE_TEXT,
             reply_markup=help_text.ABOUT_BUTTONS,
             disable_web_page_preview=True
         )
