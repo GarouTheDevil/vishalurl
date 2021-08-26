@@ -7,6 +7,27 @@ class Translation(object):
     UPGRADE_TEXT = """
 **A Modified Multiple Functional Bot**
 """
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('HELP', callback_data='help'),
+        InlineKeyboardButton('ABOUT', callback_data='about'),
+        InlineKeyboardButton('CLOSE', callback_data='close')
+        ]]
+    )
+    HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('HOME', callback_data='home'),
+        InlineKeyboardButton('ABOUT', callback_data='about'),
+        InlineKeyboardButton('CLOSE', callback_data='close')
+        ]]
+    )
+    ABOUT_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('HOME', callback_data='home'),
+        InlineKeyboardButton('HELP', callback_data='help'),
+        InlineKeyboardButton('CLOSE', callback_data='close')
+        ]]
+    )
     DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     UPLOAD_START = "<b>Uploading ⬆️</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Thank You For Using Me \n©️ @TheAllInOne_Robot</b>"
