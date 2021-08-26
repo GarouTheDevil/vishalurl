@@ -1,3 +1,4 @@
+
 import pyrogram
 from pyrogram import (
     Client,
@@ -5,6 +6,8 @@ from pyrogram import (
     InlineKeyboardMarkup,
     InlineKeyboardButton
 )
+
+class Cammand(object):
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
