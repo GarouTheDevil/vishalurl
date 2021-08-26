@@ -1,3 +1,6 @@
+import pyrogram
+from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
+
 class Translation(object):
     START_TEXT = """<b>Hi , Iam All In One Bot </b>
 """
