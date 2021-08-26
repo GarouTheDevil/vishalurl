@@ -1,11 +1,4 @@
-
-import pyrogram
-from pyrogram import (
-    Client,
-    Filters,
-    InlineKeyboardMarkup,
-    InlineKeyboardButton
-)
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 class Cammand(object):
 
