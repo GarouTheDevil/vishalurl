@@ -1,5 +1,4 @@
-import os
-import sqlite3
+import pyrogram
 from pyrogram import (
     Client,
     Filters,
