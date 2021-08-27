@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
 # the logging things
 import logging
@@ -8,7 +5,6 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-import pyrogram
 import json
 import math
 import os
@@ -33,37 +29,66 @@ from translation import Translation
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
 from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
+from plugins.help_text import start, about_meh, upgrade, help_user
 from PIL import Image
 
-@Client.on_callback_query()
+
+@pyrogram.Client.on_callback_query()
 async def button(bot, update):
-    if "|" in update.data:
-        await youtube_dl_call_back(bot, update)
-    elif "=" in update.data:
-        await ddl_call_back(bot, update)
-    elif update.data == "home":
-        await update.message.edit_text(
-            text=Translation.START_TEXT.format(update.from_user.mention),
-            reply_markup=Translation.START_BUTTONS,
-            disable_web_page_preview=True
+    if update.from_user.id in Config.BANNED_USERS:
+        await bot.delete_messages(
+            chat_id=update.message.chat.id,
+            message_ids=update.message.message_id,
+            revoke=True
         )
-    elif update.data == "help":
-        await update.message.edit_text(
-            text=Translation.HELP_USER,
-            reply_markup=Translation.HELP_BUTTONS,
-            disable_web_page_preview=True
-        )
-    elif update.data == "about":
-        await update.message.edit_text(
-            text=Translation.UPGRADE_TEXT,
-            reply_markup=Translation.ABOUT_BUTTONS,
-            disable_web_page_preview=True
-        )
-    else:
+        return
+    # logger.info(update)
+    cb_data = update.data
+    
+    if "home" in cb_data:
+        test0 = [[
+               InlineKeyboardButton("ABOUT", callback_data="about"),
+               InlineKeyboardButton("HELP", callback_data="help"),
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
+                ]]
+        mark0 = InlineKeyboardMarkup(test0)
+
         await update.message.delete()
+        await bot.send_message(chat_id=update.message.chat.id, text=Translation.START_TEXT, disable_web_page_preview=True, reply_to_message_id=update.message.reply_to_message.message_id, reply_markup=mark0)
+
+    if "about" in cb_data:
+        test1 = [[
+               InlineKeyboardButton("HOME", callback_data="home"),
+               InlineKeyboardButton("HELP", callback_data="help"),
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
+                ]]
+        mark1 = InlineKeyboardMarkup(test1)
+
+        await update.message.delete()
+        await bot.send_message(chat_id=update.message.chat.id, text=Translation.UPGRADE_TEXT, disable_web_page_preview=True, reply_to_message_id=update.message.reply_to_message.message_id, reply_markup=mark1)
+
+    if "help" in cb_data:
+        test2 = [[
+               InlineKeyboardButton("HOME", callback_data="home"),
+               InlineKeyboardButton("ABOUT", callback_data="about"),
+               InlineKeyboardButton("CLOSE", callback_data="closeme")
+                ]]
+        mark2 = InlineKeyboardMarkup(test2)
+
+        await update.message.delete()
+        await bot.send_message(chat_id=update.message.chat.id, text=Translation.HELP_USER, disable_web_page_preview=True, reply_to_message_id=update.message.reply_to_message.message_id, reply_markup=mark2)
+
+    if "closeme" in cb_data:
+      await update.message.delete()
+
+    elif "|" in cb_data:
+        await youtube_dl_call_back(bot, update)
+    elif "=" in cb_data:
+        await ddl_call_back(bot, update)
