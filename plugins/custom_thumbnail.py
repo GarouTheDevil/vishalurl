@@ -38,7 +38,7 @@ async def generate_custom_thumbnail(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "generatecustomthumbnail")
+    #TRChatBase(update.from_user.id, update.text, "generatecustomthumbnail")
     if update.reply_to_message is not None:
         reply_message = update.reply_to_message
         if reply_message.media_group_id is not None:
@@ -94,7 +94,7 @@ async def save_photo(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "save_photo")
+    #TRChatBase(update.from_user.id, update.text, "save_photo")
     if update.media_group_id is not None:
         # album is sent
         download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + "/" + str(update.media_group_id) + "/"
@@ -130,7 +130,7 @@ async def delete_thumbnail(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "deletethumbnail")
+    #TRChatBase(update.from_user.id, update.text, "deletethumbnail")
     download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
     try:
         os.remove(download_location + ".jpg")
@@ -153,7 +153,7 @@ async def show_thumbnail(bot, update):
             revoke=True
         )
         return
-    TRChatBase(update.from_user.id, update.text, "showthumbnail")
+    #TRChatBase(update.from_user.id, update.text, "showthumbnail")
     thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
     if not os.path.exists(thumb_image_path):
         mes = await sql.thumb(update.from_user.id)
