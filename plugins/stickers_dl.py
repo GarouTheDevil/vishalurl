@@ -52,7 +52,7 @@ async def DownloadStickersBot(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-    TRChatBase(update.from_user.id, update.text, "stickerdl")
+    #TRChatBase(update.from_user.id, update.text, "stickerdl")
     logger.info(update.from_user)
     download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + "_DownloadStickersBot_" + str(update.from_user.id) + ".png"
     a = await bot.send_message(
