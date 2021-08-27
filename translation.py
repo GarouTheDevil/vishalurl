@@ -70,7 +70,7 @@ class Translation(object):
     SAVED_RECVD_DOC_FILE = "<b>✓ Downloaded Successfully</b>"
     FF_MPEG_RO_BOT_RE_SURRECT_ED = """**• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **"""
     FF_MPEG_RO_BOT_STEP_TWO_TO_ONE = "<b>First Download The Media To My Server By Reply /downloadmedia To The File \nAfter It Downloaded Succesfully Use /storageinfo</b>"
-    FF_MPEG_RO_BOT_STOR_AGE_INFO = "**Video Duration** : {} \n**Now Send /trim With Run Time For Custom Screen shot Or Send /clearffmpegmedia To Delete Media From My Server**"
+    FF_MPEG_RO_BOT_STOR_AGE_INFO = "**Video Duration** : {} \n**Now Send /trim Or Send /clearffmpegmedia To Delete Media From My Server**"
     FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS = "<b>A Media Already Exists In My Server /nUse /clearffmpegmedia To Clear The Storage.</b>"
     REPLY_TO_MEDIA_ALBUM_TO_GEN_THUMB = "<b>Reply To 2 Images Album To Merge Them</b>"
     ERR_ONLY_TWO_MEDIA_IN_ALBUM = "<b>Album Should Only Two Images</b>"
