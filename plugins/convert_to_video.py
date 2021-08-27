@@ -61,7 +61,7 @@ async def convert_to_video(bot, update):
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
 
-    TRChatBase(update.from_user.id, update.text, "c2v")
+    #TRChatBase(update.from_user.id, update.text, "c2v")
     if update.reply_to_message is not None:
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
