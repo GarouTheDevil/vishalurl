@@ -47,7 +47,7 @@ class Translation(object):
 /Showthumbnail - **View Current Thumbnail**
 /deletethumbnail - **Delete Current Thumbnail**
 /bayupload - **Upload Telegram Media Remotely To BayFiles Cloud Storage**
-/trim - **• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **
+/trim - **To Trim A Image Or Clip From Telegram Media**
 /downloadmedia - **Download Media To My Server**
 /storageinfo - **Downloaded Media Information**
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
