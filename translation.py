@@ -33,7 +33,7 @@ class Translation(object):
 ⭕ <i>Send Me Images To Generate Custom Thumbnail .</i>
 ⭕ <i>Generate Screenshots of Telegram Media Files .</i>
 ⭕ <i>I Can Upload Media Files Remotely To Bay files .</i>
-⭕ <i>I Can Trim A Custom ScreenShot From Telegram Video . </i>
+⭕ <i>I Can Trim A Custom Clip Or Custom ScreenShot From Telegram Video </i>
 ⭕ <i>I Can Create A Album Thumbnail</i>
 
 <b><u>Cammands</b></u>
@@ -47,7 +47,7 @@ class Translation(object):
 /Showthumbnail - **View Current Thumbnail**
 /deletethumbnail - **Delete Current Thumbnail**
 /bayupload - **Upload Telegram Media Remotely To BayFiles Cloud Storage**
-/trim - **To Trim A Image Or Screenshot From Telegram Media**
+/trim - **• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **
 /downloadmedia - **Download Media To My Server**
 /storageinfo - **Downloaded Media Information**
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
