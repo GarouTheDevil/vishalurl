@@ -68,7 +68,7 @@ class Translation(object):
     FREE_USER_LIMIT_Q_SZE = "<b>To Avoid Weight On Bot , 1 Request Per {} Minute. \nPlease Try Again After {} Seconds.</b>"
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "<b>✓ Media Cleared Succesfully</b>"
     SAVED_RECVD_DOC_FILE = "<b>✓ Downloaded Successfully</b>"
-    FF_MPEG_RO_BOT_RE_SURRECT_ED = """<b>To Generate A Screenshot Of Specific Time, Use /trim H:MM:SS [RunTime]</b> \n=> <b><i>Example :- /trim 0:12:00</b></i>"""
+    FF_MPEG_RO_BOT_RE_SURRECT_ED = """**• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **"""
     FF_MPEG_RO_BOT_STEP_TWO_TO_ONE = "<b>First Download The Media To My Server By Reply /downloadmedia To The File \nAfter It Downloaded Succesfully Use /storageinfo</b>"
     FF_MPEG_RO_BOT_STOR_AGE_INFO = "**Video Duration** : {} \n**Now Send /trim With Run Time For Custom Screen shot Or Send /clearffmpegmedia To Delete Media From My Server**"
     FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS = "<b>A Media Already Exists In My Server /nUse /clearffmpegmedia To Clear The Storage.</b>"
