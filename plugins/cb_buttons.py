@@ -8,6 +8,7 @@ else:
 from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
 from plugins.help_text import start, help_user
+import pyrogram 
 from pyrogram import Client
 
 @pyrogram.Client.on_callback_query()
