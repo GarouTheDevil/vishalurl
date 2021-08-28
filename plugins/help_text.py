@@ -8,7 +8,7 @@ import pyrogram
 import os
 import sqlite3
 from pyrogram import Filters
-from pyrogram import Client 
+from pyrogram import Client as DevilBotz
 from pyrogram import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
 from plugins.dl_button import ddl_call_back
