@@ -2,15 +2,15 @@ import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+import pyrogram
 import os
 import sqlite3
-from pyrogram import (
-    Client,
-    Filters,
-    InlineKeyboardMarkup,
-    InlineKeyboardButton
-)
+from pyrogram import filters
+from pyrogram import Client
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
 
 
 # the secret configuration specific things
@@ -21,11 +21,6 @@ else:
 
 # the Strings used for this "thing"
 from translation import Translation
-
-import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
@@ -38,71 +33,48 @@ async def help_user(bot, update):
                await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
                 text="**Join Updates Channel**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
             )
-            return
-        except Exception:
+           except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
-
-    # logger.info(update)
-    #TRChatBase(update.from_user.id, update.text, "/help")
-    button4 = [[
-               InlineKeyboardButton("CLOSE", callback_data="closeme")
-              ]]
-    markup4 = InlineKeyboardMarkup(button4)
-
-    await bot.send_message(
+            await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
-        reply_to_message_id=update.message_id,
-        reply_markup=markup4
-    )
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
-async def about_meh(bot, update):
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("**Your Banned**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join Updates Channel**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
-
-    # logger.info(update)
-    #TRChatBase(update.from_user.id, update.text, "/about")
-    button2 = [[
-               InlineKeyboardButton("CLOSE", callback_data="closeme")
-              ]]
-    markup2 = InlineKeyboardMarkup(button2)
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.UPGRADE_TEXT,
-        parse_mode="markdown",
-        disable_web_page_preview=True,
-        reply_to_message_id=update.message_id,
-        reply_markup=markup2
-    )
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Rename', callback_data = "rename"),
+                    InlineKeyboardButton('File To Video', callback_data = "f2v")
+                ],
+                [
+                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb"),
+                    InlineKeyboardButton('File To Link', callback_data = "f2l")
+                ],
+                [
+                    InlineKeyboardButton('File To File', callback_data = "f2f"),
+                    InlineKeyboardButton('Trim', callback_data = "trim")
+                ],
+                [
+                    InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
+                    InlineKeyboardButton('ABOUT', callback_data = "about")
+                ],
+                [
+                    InlineKeyboardButton('BACK', callback_data = "cthumb")
+                ]
+            ]
+        )
+    )       
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
-async def start(bot, update):
+async def start_me(bot, update):
+    if update.from_user.id in Config.BANNED_USERS:
+        await update.reply_text("You are Banned")
+        return
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
         try:
@@ -111,68 +83,181 @@ async def start(bot, update):
                await update.reply_text("**Your Banned**")
                return
         except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            #await update.reply_text(f"Join Updates Channel")
             await update.reply_text(
-                text="**Join Updates Channel**",
+                text="**Join Update Channel**",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
+                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
             )
             return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
-
-    #TRChatBase(update.from_user.id, update.text, "/start")
-    button = [[
-               InlineKeyboardButton("ABOUT", callback_data="about"),
-               InlineKeyboardButton("HELP", callback_data="help"),
-               InlineKeyboardButton("CLOSE", callback_data="closeme"),
-             ]]
-    markup = InlineKeyboardMarkup(button)
-    # logger.info(update)
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.START_TEXT,
-        reply_to_message_id=update.message_id,
-        disable_web_page_preview=True,
-        reply_markup=markup
+        else:
+            await update.reply_text(Translation.START_TEXT.format(update.from_user.first_name),
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
+                        InlineKeyboardButton("ABOUT", callback_data = "about"),
+                        InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        ),
+        reply_to_message_id=update.message_id
     )
+            return 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
-async def upgrade(bot, update):
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
+@Cilent.on_callback_query()
+async def cb_handler(client, query: CallbackQuery):
+    data = query.data
+    if data == "rename":
+        await query.message.edit_text(
+            text=Translation.INLINE_RENAME,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "f2v":
+        await query.message.edit_text(
+            text=Translation.INLINE_C2V,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "customthumb":
+        await query.message.edit_text(
+            text=Translation.INLINE_THUMB,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "f2l":
+        await query.message.edit_text(
+            text=Translation.INLINE_F2L,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "f2f":
+        await query.message.edit_text(
+            text=Translation.INLINE_F2F,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "trim":
+        await query.message.edit_text(
+            text=Translation.INLINE_TRIM,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "urlupload":
+        await query.message.edit_text(
+            text=Translation.INLINE_URLUPLOAD,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "ghelp":
+        await query.message.edit_text(
+            text=Translation.HELP_USER,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Rename', callback_data = "rename"),
+                    InlineKeyboardButton('File To Video', callback_data = "f2v")
+                ],
+                [
+                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb"),
+                    InlineKeyboardButton('File To Link', callback_data = "f2l")
+                ],
+                [
+                    InlineKeyboardButton('File To File', callback_data = "f2f"),
+                    InlineKeyboardButton('Trim', callback_data = "trim")
+                ],
+                [
+                    InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
+                    InlineKeyboardButton('ABOUT', callback_data = "about")
+                ],
+                [
+                    InlineKeyboardButton('BACK', callback_data = "cthumb")
+                ]
+            ]
+        )
+    )       
+    elif data == "about":
+        await query.message.edit_text(
+            text=Translation.UPGRADE_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "start":
+        await query.message.edit_text(
+            text=Transition.START_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup (
+            [
+                [
+                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
+                        InlineKeyboardButton("ABOUT", callback_data = "about"),
+                        InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )    
+    elif data == "close":
+        await query.message.delete()
         try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("**Your Banned**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join Updates Channel**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
-
-    # logger.info(update)
-    #TRChatBase(update.from_user.id, update.text, "/upgrade")
-    button3 = [[
-               InlineKeyboardButton("CLOSE", callback_data="closeme")
-              ]]
-    markup3 = InlineKeyboardMarkup(button3)
-
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.Free_User,
-        parse_mode="markdown",
-        reply_to_message_id=update.message_id,
-        disable_web_page_preview=True,
-        reply_markup=markup3
-    ) 
+            await query.message.reply_to_message.delete()
+        except:
+            pass
