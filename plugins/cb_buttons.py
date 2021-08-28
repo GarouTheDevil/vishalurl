@@ -26,7 +26,7 @@ async def button(bot, update):
     # logger.info(update)
     cb_data = update.data
 
-    if data == "rename":
+    if "rename" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_RENAME,
             disable_web_page_preview = True,
@@ -39,7 +39,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "f2v":
+    elif "f2v" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_C2V,
             disable_web_page_preview = True,
@@ -52,7 +52,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "customthumb":
+    elif "customthumb" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_THUMB,
             disable_web_page_preview = True,
@@ -65,7 +65,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "f2l":
+    elif "f2l" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_F2L,
             disable_web_page_preview = True,
@@ -78,7 +78,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "f2f":
+    elif "f2f" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_F2F,
             disable_web_page_preview = True,
@@ -91,7 +91,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "trim":
+    elif "trim" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_TRIM,
             disable_web_page_preview = True,
@@ -104,7 +104,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "urlupload":
+    elif "urlupload" in cb_data:
         await query.message.edit_text(
             text=Translation.INLINE_URLUPLOAD,
             disable_web_page_preview = True,
@@ -117,7 +117,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "ghelp":
+    elif "ghelp" in cb_data:
         await query.message.edit_text(
             text=Translation.HELP_USER,
             disable_web_page_preview = True,
@@ -145,7 +145,7 @@ async def button(bot, update):
             ]
         )
     )       
-    elif data == "about":
+    elif "about" in cb_data:
         await query.message.edit_text(
             text=Translation.UPGRADE_TEXT,
             disable_web_page_preview = True,
@@ -158,7 +158,7 @@ async def button(bot, update):
             ]
         )
      )
-    elif data == "start":
+    elif "start" in cb_data:
         await query.message.edit_text(
             text=Transition.START_TEXT,
             disable_web_page_preview = True,
