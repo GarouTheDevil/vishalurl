@@ -102,3 +102,160 @@ async def start(bot, update):
         ),
         reply_to_message_id=update.message_id
     )
+            return 
+
+@DevilBotz.on_callback_query()
+async def cb_handler(client: DevilBotz , query: CallbackQuery):
+    data = query.data
+        if data == "rename":
+        await query.message.edit_text(
+            text=Translation.INLINE_RENAME,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "c2v":
+        await query.message.edit_text(
+            text=Translation.INLINE_C2V,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "customthumb":
+        await query.message.edit_text(
+            text=Translation.INLINE_THUMB,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "f2l":
+        await query.message.edit_text(
+            text=Translation.INLINE_F2L,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "f2f":
+        await query.message.edit_text(
+            text=Translation.INLINE_F2F,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "trim":
+        await query.message.edit_text(
+            text=Translation.INLINE_TRIM,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif data == "urlupload":
+        await query.message.edit_text(
+            text=Translation.INLINE_URLUPLOAD,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif "ghelp" in cb_data:
+        await query.message.edit_text(
+            text=Translation.HELP_USER,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Rename', callback_data = "rename"),
+                    InlineKeyboardButton('File To Video', callback_data = "f2v")
+                ],
+                [
+                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb"),
+                    InlineKeyboardButton('File To Link', callback_data = "f2l")
+                ],
+                [
+                    InlineKeyboardButton('File To File', callback_data = "f2f"),
+                    InlineKeyboardButton('Trim', callback_data = "trim")
+                ],
+                [
+                    InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
+                    InlineKeyboardButton('ABOUT', callback_data = "about")
+                ],
+                [
+                    InlineKeyboardButton('BACK', callback_data = "cthumb")
+                ]
+            ]
+        )
+    )       
+    elif "about" in cb_data:
+        await query.message.edit_text(
+            text=Translation.UPGRADE_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )
+    elif "start" in cb_data:
+        await query.message.edit_text(
+            text=Transition.START_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup (
+            [
+                [
+                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
+                        InlineKeyboardButton("ABOUT", callback_data = "about"),
+                        InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        )
+     )   
+     elif data == "close":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
