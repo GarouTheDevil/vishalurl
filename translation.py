@@ -53,6 +53,13 @@ class Translation(object):
 /clearffmpegmedia - **Clear Downloaded Media From My Server**
 /generatecustomthumbnail - **Generate Album Thumbnail [Merge Two Images]**
 """
+    INLINE_URLUPLOAD = "**Bot Can Upload Direct Download Links Or Youtube-dl Supported Links To Telegram , \n If You Want To Upload With Default Name Then Send Link In Link | FileName Formart**"
+    INLINE_TRIM = "**• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **"
+    INLINE_F2F = "**To Convert Video To File Without Thumbnail And Renaming , \nThen Use Cammand : /c2f By Replying To The Video**"
+    INLINE_F2L = "**To Generate A URL Of Telegram Media Reply /bayupload To The Telegram Media. Bot Uploads File To Bayfiles Cloud Storage And Generates Download Link**"
+    INLINE_THUMB = "**1 • TO Set A Custom Thumbnail Just Send Image To Bot \n 2 • To View Current Thumbnail Use Cammand : /showthumbnail \n3 • To Delete Current Thumbnail Use Cammand : /deletethumbnail \n4 • To Merge Images Use Cammand : /generatecustomthumbnail**" 
+    INLINE_C2V = "**To Convert A File To Video Reply /c2v To A File**"
+    INLINE_RENAME = "**To Rename File Reply To A Telegram Media With /rename Text \n• Example /rename Hi**"
     BLOCK_LIST_TEXT = "This URL Is Blocked"
     CHECKING_LINK = "<b>Processing...</b>⏳"
     BANNED_USER_TEXT = "<b>You are Banned!</b>"
