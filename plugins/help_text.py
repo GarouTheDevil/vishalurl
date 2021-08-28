@@ -23,7 +23,7 @@ else:
 from translation import Translation
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["help"]))
+@DevilBotz.on_message(pyrogram.Filters.command(["help"]))
 async def help_user(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
@@ -68,7 +68,7 @@ async def help_user(bot, update):
         )
     )       
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
+@DevilBotz.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are Banned")
