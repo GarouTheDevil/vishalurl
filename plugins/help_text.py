@@ -105,7 +105,7 @@ async def start_me(bot, update):
             return 
 
 @pyrogram.Client.on_callback_query()
-async def cb_handler(query: CallbackQuery):
+async def cb_handler(Client, query: CallbackQuery):
     data = query.data
     if data == "rename":
         await query.message.edit_text(
