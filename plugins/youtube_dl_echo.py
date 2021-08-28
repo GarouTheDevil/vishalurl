@@ -34,12 +34,27 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 @pyrogram.Client.on_message(pyrogram.Filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
+    if Config.LOG_CHANNEL:
+        try:
+            log_message = await update.forward(Config.LOG_CHANNEL)
+            log_info = "#AllInOne Message Sender Information\n"
+            log_info += "\nFirst Name: " + update.from_user.first_name
+            log_info += "\nUser ID: " + str(update.from_user.id)
+            log_info += "\nUsername: @" + update.from_user.username if update.from_user.username else ""
+            log_info += "\nUser Link: " + update.from_user.mention
+            await log_message.reply_text(
+                text=log_info,
+                disable_web_page_preview=True,
+                quote=True
+            )
+        except Exception as error:
+            print(error)
     logger.info(update.from_user.id)
     fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
     url = update.text
     if Config.UPDATE_CHANNEL:
         try:
-            user = await bot.get_chat_member(Config.UPDATE_CHANNEL, update.chat.id)
+            user = await bot.get_chat_member(Config.UPDATE_CHANNEL, update.from_user.id)
             if user.status == "kicked":
               await bot.edit_message_text(text=Translation.BANNED_USER_TEXT, message_id=fmsg.message_id)
               return
@@ -48,8 +63,7 @@ async def echo(bot, update):
             return
         except Exception:
             await bot.edit_message_text(chat_id=update.chat.id, text=Translation.SOMETHING_WRONG, message_id=fmsg.message_id)
-            return 
-
+            return
     if update.from_user.id not in Config.AUTH_USERS:
         # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
@@ -63,10 +77,9 @@ async def echo(bot, update):
                 return
         else:
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-
     youtube_dl_username = None
     youtube_dl_password = None
-    file_name = None    
+    file_name = None
     if "|" in url:
         url_parts = url.split("|")
         if len(url_parts) == 2:
