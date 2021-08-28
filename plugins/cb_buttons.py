@@ -11,12 +11,6 @@ from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
 from plugins.help_text import start, help_user
 import pyrogram 
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
 
 from pyrogram import Client
 
