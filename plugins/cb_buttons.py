@@ -27,7 +27,7 @@ async def button(bot, update):
     cb_data = update.data
 
     if "rename" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_RENAME,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -40,7 +40,7 @@ async def button(bot, update):
         )
      )
     elif "f2v" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_C2V,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -53,7 +53,7 @@ async def button(bot, update):
         )
      )
     elif "customthumb" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_THUMB,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -66,7 +66,7 @@ async def button(bot, update):
         )
      )
     elif "f2l" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_F2L,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -79,7 +79,7 @@ async def button(bot, update):
         )
      )
     elif "f2f" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_F2F,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -92,7 +92,7 @@ async def button(bot, update):
         )
      )
     elif "trim" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_TRIM,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -105,7 +105,7 @@ async def button(bot, update):
         )
      )
     elif "urlupload" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.INLINE_URLUPLOAD,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -118,7 +118,7 @@ async def button(bot, update):
         )
      )
     elif "ghelp" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.HELP_USER,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -146,7 +146,7 @@ async def button(bot, update):
         )
     )       
     elif "about" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Translation.UPGRADE_TEXT,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
@@ -159,7 +159,7 @@ async def button(bot, update):
         )
      )
     elif "start" in cb_data:
-        await query.message.edit_text(
+        await bot.message.edit_text(
             text=Transition.START_TEXT,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup (
