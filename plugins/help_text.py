@@ -39,8 +39,6 @@ async def help_user(bot, update):
                     [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
               ])
             )
-           except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
             return
             await bot.send_message(
         chat_id=update.chat.id,
