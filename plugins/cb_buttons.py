@@ -168,12 +168,10 @@ async def button(bot, update):
             ]
         )
      )    
-    elif data == "close":
-        await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
 
-    if "|" in update.data:
+    if "close" in cb_data:
+      await update.message.delete()
+    elif "|" in cb_data:
         await youtube_dl_call_back(bot, update)
-    elif "=" in update.data:
+    elif "=" in cb_data:
         await ddl_call_back(bot, update)
