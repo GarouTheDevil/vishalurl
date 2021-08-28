@@ -34,9 +34,9 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 @pyrogram.Client.on_message(pyrogram.Filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-    if Config.LOG_CHANNEL:
+    if Config.LOG_CHAN:
         try:
-            log_message = await update.forward(Config.LOG_CHANNEL)
+            log_message = await update.forward(Config.LOG_CHAN)
             log_info = "#AllInOne Message Sender Information\n"
             log_info += "\nFirst Name: " + update.from_user.first_name
             log_info += "\nUser ID: " + str(update.from_user.id)
