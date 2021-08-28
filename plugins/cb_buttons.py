@@ -172,8 +172,7 @@ async def button(bot, update):
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
-        except:
-            pass
+
 @Client.on_callback_query()
 async def button(bot, update):
     if "|" in update.data:
