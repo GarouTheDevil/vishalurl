@@ -9,7 +9,7 @@ import os
 import sqlite3
 from pyrogram import Filters
 from pyrogram import Client
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
+from pyrogram import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
 
 
