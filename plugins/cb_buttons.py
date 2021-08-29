@@ -207,7 +207,7 @@ async def button(bot, update):
             ]
         )
      )   
-    elif data == "close":
+    elif update.data == "close":
         await update.message.delete()
         try:
             await update.message.reply_to_message.delete()
