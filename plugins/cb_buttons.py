@@ -25,6 +25,7 @@ async def button(bot, update):
     elif update.data == "start":
         await update.message.edit_text(
             text=Translation.START_TEXT.format(update.from_user.mention),
+            disable_web_page_preview=True
             reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -33,8 +34,6 @@ async def button(bot, update):
                         InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        ),
-            disable_web_page_preview=True
         )
     elif update.data == "help":
         await update.message.edit_text(
@@ -66,9 +65,16 @@ async def button(bot, update):
     elif update.data == "about":
         await update.message.edit_text(
             text=Translation.ABOUT_TEXT,
-            reply_markup=Translation.ABOUT_BUTTONS,
             disable_web_page_preview=True
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
         )
+     )
     elif update.data == "rename":
        await update.message.edit.text(
            text=Translation.INLINE_RENAME,
