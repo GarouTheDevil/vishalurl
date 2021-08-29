@@ -204,7 +204,7 @@ async def button(bot, update):
      )
     elif update.data == "start":
        await update.message.edit.text(
-text=Transition.START_TEXT,
+            text=Transition.START_TEXT,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup (
             [
