@@ -36,22 +36,7 @@ class Translation(object):
 ⭕ <i>I Can Trim A Custom Clip Or Custom ScreenShot From Telegram Video </i>
 ⭕ <i>I Can Create A Album Thumbnail</i>
 
-<b><u>Cammands</b></u>
-/start - **Start Bot**
-/help - **Use For Help**
-/about - **About Bot**
-/upgrade - **For Free User Limt**
-/rename - **To Rename The Telegram Media File**
-/c2v - **To Convert File To Video**
-/c2f - **Convert Video To File**
-/Showthumbnail - **View Current Thumbnail**
-/deletethumbnail - **Delete Current Thumbnail**
-/bayupload - **Upload Telegram Media Remotely To BayFiles Cloud Storage**
-/trim - **To Trim A Image Or Clip From Telegram Media**
-/downloadmedia - **Download Media To My Server**
-/storageinfo - **Downloaded Media Information**
-/clearffmpegmedia - **Clear Downloaded Media From My Server**
-/generatecustomthumbnail - **Generate Album Thumbnail [Merge Two Images]**
+<b>Cammands :</b>
 """
     INLINE_URLUPLOAD = "**Bot Can Upload Direct Download Links Or Youtube-dl Supported Links To Telegram , \n If You Want To Upload With Default Name Then Send Link In Link | FileName Formart**"
     INLINE_TRIM = "**• To Trim A Image Or Screenshot From Telegram Media \n=> Use : /trim Runtime \n=> Example : /trim 00:01:00 \n• To Trim Specific Clip \n=> Use : /trim StartTime EndTime \n=> Example : /trim 00:01:00 00:02:00 **"
