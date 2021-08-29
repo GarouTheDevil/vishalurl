@@ -73,7 +73,6 @@ async def button(bot, update):
                 ]
             ]
         )
-     )
     elif update.data == "rename":
        await update.message.edit.text(
            text=Translation.INLINE_RENAME,
