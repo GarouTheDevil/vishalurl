@@ -102,7 +102,7 @@ async def start(bot, update):
         reply_to_message_id=update.message_id
     )
 @Client.on_message(pyrogram.Filters.command(["about"]))
-async def start(bot, update):
+async def about(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are Banned")
         return
