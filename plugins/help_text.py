@@ -8,7 +8,7 @@ import pyrogram
 import os
 import sqlite3
 from pyrogram import Filters
-from pyrogram import Client as DevilBotz
+from pyrogram import Client
 from pyrogram import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
 
@@ -22,7 +22,7 @@ else:
 from translation import Translation
 
 
-@DevilBotz.on_message(pyrogram.Filters.command(["help"]))
+@Client.on_message(pyrogram.Filters.command(["help"]))
 async def help_user(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
@@ -67,7 +67,7 @@ async def help_user(bot, update):
         )
     )       
 
-@DevilBotz.on_message(pyrogram.Filters.command(["start"]))
+@Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are Banned")
@@ -103,8 +103,8 @@ async def start(bot, update):
     )
             return 
 
-@DevilBotz.on_callback_query()
-async def cb_handler(client: DevilBotz , query: CallbackQuery):
+@Client.on_callback_query()
+async def cb_handler(client, query: CallbackQuery):
     data = query.data
     if data == "rename":
         await query.message.edit_text(
