@@ -61,6 +61,18 @@ async def button(bot, update):
                 ]
             ]
         ))
+     elif update.data == "about":
+        await update.message.edit.text(
+            text=Translation.UPGRADE_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        ))
     elif update.data == "rename":
        await update.message.edit.text(
            text=Translation.INLINE_RENAME,
@@ -72,8 +84,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "c2v":
        await update.message.edit.text(
             text=Translation.INLINE_C2V,
@@ -85,8 +96,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "customthumb":
        await update.message.edit.text(
             text=Translation.INLINE_THUMB,
@@ -98,8 +108,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "f2l":
        await update.message.edit.text(
             text=Translation.INLINE_F2L,
@@ -111,8 +120,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "f2f":
        await update.message.edit.text(
             text=Translation.INLINE_F2F,
@@ -124,8 +132,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "trim":
        await update.message.edit.text(
             text=Translation.INLINE_TRIM,
@@ -137,8 +144,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
+        ))
     elif update.data == "urlupload":
        await update.message.edit.text(
             text=Translation.INLINE_URLUPLOAD,
@@ -150,63 +156,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
-     )
-    elif update.data == "ghelp":
-       await update.message.edit.text(
-            text=Translation.HELP_USER,
-            disable_web_page_preview = True,
-            reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Rename', callback_data = "rename"),
-                    InlineKeyboardButton('File To Video', callback_data = "f2v")
-                ],
-                [
-                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb"),
-                    InlineKeyboardButton('File To Link', callback_data = "f2l")
-                ],
-                [
-                    InlineKeyboardButton('File To File', callback_data = "f2f"),
-                    InlineKeyboardButton('Trim', callback_data = "trim")
-                ],
-                [
-                    InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
-                    InlineKeyboardButton('ABOUT', callback_data = "about")
-                ],
-                [
-                    InlineKeyboardButton('BACK', callback_data = "cthumb")
-                ]
-            ]
-        )
-    )
-    elif update.data == "about":
-       await update.message.edit.text(
-            text=Translation.UPGRADE_TEXT,
-            disable_web_page_preview = True,
-            reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Back', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
-                ]
-            ]
-        )
-     )
-    elif update.data == "start":
-       await update.message.edit.text(
-            text=Transition.START_TEXT,
-            disable_web_page_preview = True,
-            reply_markup=InlineKeyboardMarkup (
-            [
-                [
-                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
-                        InlineKeyboardButton("ABOUT", callback_data = "about"),
-                        InlineKeyboardButton("CLOSE", callback_data = "close")
-                ]
-            ]
-        )
-     )   
+        ))
     elif update.data == "close":
         await update.message.delete()
         try:
