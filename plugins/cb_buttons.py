@@ -13,7 +13,7 @@ from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
 from pyrogram import Client
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
-from plugins.help_text import help_user, start
+from plugins.help_text import help_user, start, about
 
 @Client.on_callback_query()
 async def button(bot, update):
