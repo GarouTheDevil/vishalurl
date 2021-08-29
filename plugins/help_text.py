@@ -106,7 +106,7 @@ async def start(bot, update):
 @DevilBotz.on_callback_query()
 async def cb_handler(client: DevilBotz , query: CallbackQuery):
     data = query.data
-        if data == "rename":
+    if data == "rename":
         await query.message.edit_text(
             text=Translation.INLINE_RENAME,
             disable_web_page_preview = True,
