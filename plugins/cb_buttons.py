@@ -34,7 +34,7 @@ async def button(bot, update):
                         InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
+        ))
     elif update.data == "ghelp":
         await update.message.edit_text(
             text=Translation.HELP_TEXT,
@@ -61,7 +61,7 @@ async def button(bot, update):
                     InlineKeyboardButton('BACK', callback_data = "cthumb")
                 ]
             ]
-        )
+        ))
     elif update.data == "rename":
        await update.message.edit.text(
            text=Translation.INLINE_RENAME,
