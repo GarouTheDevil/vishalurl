@@ -25,7 +25,7 @@ async def button(bot, update):
     elif update.data == "start":
         await update.message.edit_text(
             text=Translation.START_TEXT.format(update.from_user.mention),
-            disable_web_page_preview=True
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -35,10 +35,10 @@ async def button(bot, update):
                 ]
             ]
         )
-    elif update.data == "help":
+    elif update.data == "ghelp":
         await update.message.edit_text(
             text=Translation.HELP_TEXT,
-            disable_web_page_preview=True
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
             [
                 [
