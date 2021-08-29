@@ -39,6 +39,7 @@ async def button(bot, update):
     elif update.data == "help":
         await update.message.edit_text(
             text=Translation.HELP_TEXT,
+            disable_web_page_preview=True
             reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -61,8 +62,6 @@ async def button(bot, update):
                     InlineKeyboardButton('BACK', callback_data = "cthumb")
                 ]
             ]
-        )  
-            disable_web_page_preview=True
         )
     elif update.data == "about":
         await update.message.edit_text(
