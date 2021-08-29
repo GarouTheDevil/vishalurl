@@ -61,7 +61,7 @@ async def button(bot, update):
                 ]
             ]
         ))
-     elif update.data == "about":
+    elif update.data == "about":
         await update.message.edit.text(
             text=Translation.UPGRADE_TEXT,
             disable_web_page_preview = True,
@@ -72,7 +72,7 @@ async def button(bot, update):
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
-        )
+        ))
     elif update.data == "rename":
        await update.message.edit.text(
            text=Translation.INLINE_RENAME,
