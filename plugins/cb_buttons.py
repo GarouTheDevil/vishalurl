@@ -5,6 +5,11 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 
+from translation import Translation
+
+import pyrogram
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
 from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
 from pyrogram import Client
