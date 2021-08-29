@@ -26,15 +26,15 @@ class Translation(object):
 --------
  Use Freely Without Flooding"""
     HELP_USER ="""
-⭕ <i>I Can Upload Direct Link Supported Video Formats Of <a href="https://rg3.github.io/youtube-dl/supportedsites.html">YouTube DL</a> To Telegram .</i>
-⭕ <i>I Can Upload Direct HTTP Link As A Media File To Telegram .</i>
-⭕ <i>I Can Convert To Streamable Video Of Any Telegram File .</i>
-⭕ <i>I Can Rename Telegram Files With Custom Thumbnail Support .</i>
-⭕ <i>Send Me Images To Generate Custom Thumbnail .</i>
-⭕ <i>Generate Screenshots of Telegram Media Files .</i>
-⭕ <i>I Can Upload Media Files Remotely To Bay files .</i>
-⭕ <i>I Can Trim A Custom Clip Or Custom ScreenShot From Telegram Video </i>
-⭕ <i>I Can Create A Album Thumbnail</i>
+<b>Bot Can Upload Direct Link Supported Video Formats Of <a href="https://rg3.github.io/youtube-dl/supportedsites.html">YouTube DL</a> To Telegram</b>
+<b>Bot Can Upload Direct HTTP Link As A Media File To Telegram</b>
+<b>Bot Can Convert To Streamable Video Of Any Telegram File</b>
+<b>Bot Can Rename Telegram Files With Custom Thumbnail Support</b>
+<b>Send Image To Generate Custom Thumbnail</b>
+<b>Bot Can Generate Screenshots of Telegram Media Files</b>
+<b>Bot Can Upload Media Files Remotely To Bay files</b>
+<b>Bot Can Trim A Custom Clip Or Custom ScreenShot From Telegram Video</b>
+<b>Bot Can Create A Album Thumbnail</b>
 
 <b>Cammands :</b>
 """
