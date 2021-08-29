@@ -49,8 +49,8 @@ async def button(bot, update):
                     InlineKeyboardButton('File To Link', callback_data = "f2l")
                 ],
                 [
-                    InlineKeyboardButton('File To File', callback_data = "f2f"),
-                    InlineKeyboardButton('Trim', callback_data = "trim")
+                    InlineKeyboardButton('Trim', callback_data = "trim"),
+                    InlineKeyboardButton('File To File', callback_data = "f2f")
                 ],
                 [
                     InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
