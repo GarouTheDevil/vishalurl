@@ -57,7 +57,7 @@ async def button(bot, update):
                     InlineKeyboardButton('ABOUT', callback_data = "about")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "cthumb")
+                    InlineKeyboardButton('BACK', callback_data = "start")
                 ]
             ]
         ))
@@ -68,7 +68,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Back', callback_data = "ghelp"),
+                    InlineKeyboardButton('Back', callback_data = "start"),
                     InlineKeyboardButton("CLOSE", callback_data = "close")
                 ]
             ]
@@ -85,7 +85,7 @@ async def button(bot, update):
                 ]
             ]
         ))
-    elif update.data == "c2v":
+    elif update.data == "f2v":
        await update.message.edit_text(
             text=Translation.INLINE_C2V,
             disable_web_page_preview = True,
