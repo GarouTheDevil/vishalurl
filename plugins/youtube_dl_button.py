@@ -18,12 +18,12 @@ else:
 from datetime import datetime
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
-from pyrogram.types import InputMediaPhoto
+from pyrogram import InputMediaPhoto
 
 from translation import Translation
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from PIL import Image
 
 
