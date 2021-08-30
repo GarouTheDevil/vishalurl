@@ -252,7 +252,7 @@ async def youtube_dl_call_back(bot, update):
                     img.resize((320, height))
                 else:
                     img.resize((90, height))
-
+                if tg_send_type == "file":
                     img.save(thumb_image_path, "JPEG")
                 else:
                     thumb_image_path = Config.DEF_THUMB_NAIL_VID_S
