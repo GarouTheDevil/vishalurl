@@ -1,4 +1,3 @@
-
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -121,34 +120,7 @@ async def ddl_call_back(bot, update):
                     if metadata.has("duration"):
                         duration = metadata.get('duration').seconds
 
-            # get the correct width, height, and duration for videos greater than 10MB
-            thumb_image_path = Config.DOWNLOAD_LOCATION + \
-            "/" + str(update.from_user.id) + ".jpg"
-            logger.info(thumb_image_path)
-            if not os.path.exists(thumb_image_path):
-                if tg_send_type == "video":
-                    mes = await thumb(update.from_user.id)
-                    if mes != None:
-                        m = await bot.get_messages(update.message.chat.id, mes.msg_id)
-                        await m.download(file_name=thumb_image_path)
-                        thumb_image_path = thumb_image_path
-                    else:
-                        try:
-                            thumb_image_path = await take_screen_shot(download_directory, os.path.dirname(download_directory), random.randint(0, duration - 1))
-                        except:
-                            thumb_image_path = None
-                else:
-                    mes = await thumb(update.from_user.id)
-                    logger.info(str(mes))
-                    if mes != None:
-                        m = await bot.get_messages(update.message.chat.id, mes.msg_id)
-                        await m.download(file_name=thumb_image_path)
-                        thumb_image_path = thumb_image_path
-                    else:
-                        thumb_image_path = None
-
-
-            else:   
+            if os.path.exists(thumb_image_path):
                 width = 0
                 height = 0
                 metadata = extractMetadata(createParser(thumb_image_path))
@@ -166,6 +138,8 @@ async def ddl_call_back(bot, update):
                 else:
                     img.resize((90, height))
                 img.save(thumb_image_path, "JPEG")
+            else:
+                thumb_image_path = None
 
             start_time = time.time()
            
@@ -294,10 +268,10 @@ File Size: {}""".format(url, humanbytes(total_length))
                     estimated_total_time = elapsed_time + time_to_completion
                     try:
                         current_message = """**Download Status**
-URL: {}
-File Size: {}
-Downloaded: {}
-ETA: {}""".format(
+**URL :** {}
+**File Size :** {}
+**Downloaded :** {}
+**ETA :** {}""".format(
     url,
     humanbytes(total_length),
     humanbytes(downloaded),
