@@ -24,7 +24,7 @@ from translation import Translation
 
 from pyrogram import Client, filters
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors importantly UserNotParticipant, UserBannedInChannel
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 from database.database import *
 from helper_funcs.display_progress import humanbytes
 from helper_funcs.help_uploadbot import DownLoadFile
