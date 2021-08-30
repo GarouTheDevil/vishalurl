@@ -22,6 +22,9 @@ class Config(object):
     CHUNK_SIZE = 128
     # default thumbnail to be used in the videos
     # default thumbnail to be used in the videos
+    # Generate screenshots for file after uploading
+    # Defaults to True
+    SCREENSHOTS = os.environ.get("SCREENSHOTS", "False")
     DEF_THUMB_NAIL_VID_S = os.environ.get("DEF_THUMB_NAIL_VID_S", "")
     # proxy for accessing youtube-dl in GeoRestricted Areas
     # Get your own proxy from https://github.com/rg3/youtube-dl/issues/1091#issuecomment-230163061
