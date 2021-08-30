@@ -253,7 +253,7 @@ async def youtube_dl_call_back(bot, update):
                 else:
                     img.resize((90, height))
                 img.save(thumb_image_path, "JPEG")
-            else:
+                else:
                 thumb_image_path = Config.DEF_THUMB_NAIL_VID_S
 
             start_time = time.time()
