@@ -22,7 +22,7 @@ else:
 
 from translation import Translation
 
-from pyrogram import Client, filters
+from pyrogram import Client, Filters
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 from database.database import *
@@ -34,7 +34,7 @@ from hachoir.parser import createParser
 from datetime import datetime
 from PIL import Image
 
-@Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
+@Client.on_message(Filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     if Config.LOG_CHAN:
         try:
