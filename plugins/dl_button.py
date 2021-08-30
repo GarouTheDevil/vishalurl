@@ -166,8 +166,6 @@ async def ddl_call_back(bot, update):
                 else:
                     img.resize((90, height))
                 img.save(thumb_image_path, "JPEG")
-            else:
-                thumb_image_path = None
 
             start_time = time.time()
            
