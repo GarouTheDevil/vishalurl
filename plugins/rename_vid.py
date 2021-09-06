@@ -41,7 +41,7 @@ from database.database import *
 from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["rename_video"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["renamevideo"]))
 async def rename_video(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
