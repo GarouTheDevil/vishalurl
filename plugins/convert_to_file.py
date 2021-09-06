@@ -15,6 +15,9 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 
+PROCESS_MAX_TIMEOUT = int(os.environ.get("TIME_LIMIT"))
+ADL_BOT_RQ = {}
+
 # the Strings used for this "thing"
 from translation import Translation
 
@@ -26,6 +29,8 @@ from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
+from datetime import datetime
+
 from database.database import *
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
@@ -61,6 +66,26 @@ async def convert_to_file(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
+
+    if update.from_user.id not in Config.AUTH_USERS:
+        # restrict free users from sending more links
+        if str(update.from_user.id) in Config.ADL_BOT_RQ:
+            current_time = time.time()
+            previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
+            process_max_timeout = round(Config.PROCESS_MAX_TIMEOUT/60)
+            present_time = round(Config.PROCESS_MAX_TIMEOUT-(current_time - previous_time))
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
+            if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
+                await bot.send_message(
+                    chat_id=update.chat.id,
+                    text=f"<b>To Avoid Weight On Bot , 1 Request Per {process_max_timeout} Minute. \nPlease Try Again After {present_time} Seconds.</b>",
+                    disable_web_page_preview=True,
+                    parse_mode="html",
+                    reply_to_message_id=update.message_id
+                )
+                return
+        else:
+            Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
 
     #TRChatBase(update.from_user.id, update.text, "c2f")
     if update.reply_to_message is not None:
