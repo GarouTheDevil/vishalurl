@@ -29,6 +29,8 @@ from helper_funcs.display_progress import progress_for_pyrogram
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
+from datetime import datetime
+
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
 from database.database import *
