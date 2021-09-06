@@ -17,6 +17,9 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 
+PROCESS_MAX_TIMEOUT = int(os.environ.get("TIME_LIMIT"))
+ADL_BOT_RQ = {}
+
 # the Strings used for this "thing"
 from translation import Translation
 
