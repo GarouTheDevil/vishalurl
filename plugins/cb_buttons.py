@@ -86,6 +86,18 @@ async def button(bot, update):
                 ]
             ]
         ))
+    elif update.data == "renamevid":
+       await update.message.edit_text(
+            text=Translation.INLINE_RENAMEDOC,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
+                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        ))
     elif update.data == "f2v":
        await update.message.edit_text(
             text=Translation.INLINE_C2V,
