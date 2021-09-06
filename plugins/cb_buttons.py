@@ -41,11 +41,11 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Rename', callback_data = "rename"),
-                    InlineKeyboardButton('File To Video', callback_data = "f2v")
+                    InlineKeyboardButton('Rename File', callback_data = "rename"),
+                    InlineKeyboardButton('Rename Video', callback_data = "renamevid")
                 ],
                 [
-                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb"),
+                    InlineKeyboardButton('File To Video', callback_data = "f2v"),
                     InlineKeyboardButton('File To Link', callback_data = "f2l")
                 ],
                 [
@@ -54,10 +54,11 @@ async def button(bot, update):
                 ],
                 [
                     InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
-                    InlineKeyboardButton('ABOUT', callback_data = "about")
+                    InlineKeyboardButton('Thumbnail', callback_data = "about")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "start")
+                    InlineKeyboardButton('BACK', callback_data = "cthumb"),
+                    InlineKeyboardButton('ABOUT', callback_data = "about")
                 ]
             ]
         ))
