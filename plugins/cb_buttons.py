@@ -88,7 +88,7 @@ async def button(bot, update):
         ))
     elif update.data == "renamevid":
        await update.message.edit_text(
-            text=Translation.INLINE_RENAMEDOC,
+            text=Translation.INLINE_RENAMEVID,
             disable_web_page_preview = True,
             reply_markup=InlineKeyboardMarkup(
             [
