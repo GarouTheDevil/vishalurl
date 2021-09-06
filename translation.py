@@ -48,6 +48,7 @@ class Translation(object):
     BLOCK_LIST_TEXT = "This URL Is Blocked"
     CHECKING_LINK = "<b>Processing...</b>⏳"
     BANNED_USER_TEXT = "<b>You are Banned</b>"
+    REPLY_TO_DOC_FOR_RENAME_FILE = "<b> Reply To A Video To Rename It </b>"
     FORCE_SUBSCRIBE_TEXT = "<i>Join My Updates Channel For More Bots</i>"
     NO_CUSTOM_THUMB_NAIL_FOUND = "<b>No Custom ThumbNail Found</b>"
     NO_VOID_FORMAT_FOUND = "<b>Link Cantains No Media File</b> \n\n<b>YouTubeDL</b> said: {}"
