@@ -71,10 +71,10 @@ async def echo(bot, update):
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
             previous_time = Config.ADL_BOT_RQ[str(update.from_user.id)]
-            process_max_timeout = round(Config.PROCESS_MAX_TIMEOUT/60)
-            present_time = round(Config.PROCESS_MAX_TIMEOUT-(current_time - previous_time))
+            process_max_timeout = round(Config.UPROCESS_MAX_TIMEOUT/60)
+            present_time = round(Config.UPROCESS_MAX_TIMEOUT-(current_time - previous_time))
             Config.ADL_BOT_RQ[str(update.from_user.id)] = time.time()
-            if round(current_time - previous_time) < Config.PROCESS_MAX_TIMEOUT:
+            if round(current_time - previous_time) < Config.UPROCESS_MAX_TIMEOUT:
                 await bot.edit_message_text(chat_id=update.chat.id, text=Translation.FREE_USER_LIMIT_Q_SZE.format(process_max_timeout, present_time), disable_web_page_preview=True, parse_mode="html", message_id=fmsg.message_id)
                 return
         else:
