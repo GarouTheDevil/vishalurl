@@ -46,23 +46,3 @@ class Config(object):
     USERNAME = os.environ.get("USERNAME", "David9010") 
     # dict to hold the ReQuest queue
     ADL_BOT_RQ = {}
-
-    Bot_username = os.environ.get("Bot_username", "") # Your bot's telegram username (must enter with '@' in the front of the username)
-    #If deploying on vps edit the above value as example := Bot_username = "Your-Bot_username-inside-inverted-commas."
-
-    Mega_email = os.environ.get("Mega_email", "None") # This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
-    #If deploying on vps edit the above value as example := Mega_email = "Your-Mega_email-inside-inverted-commas."
-    
-    Mega_password = os.environ.get("Mega_password", "None") # This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.
-    #If deploying on vps edit the above value as example := Mega_password = "Your-Mega_password-inside-inverted-commas."
-    
-    REDIS_URI = os.environ.get("REDIS_URI", None) # Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)
-    #If deploying on vps edit the above value as example := REDIS_URI = "Your-Redis-Endpoint-inside-inverted-commas."
-    
-    REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)
-    #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
-
-    DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location for users. (Don't change anything in this field!)
-    ADMIN_LOCATION = "./ADOWNLOADS" # The download location for auth users. (Don't change anything in this field!)
-    CREDENTIALS_LOCATION = "./CREDENTIALS" # Location where your mega.nz credentials for megatools gets saved if you provide them. (Don't change anything in this field!)
-
