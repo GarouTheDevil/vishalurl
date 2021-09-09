@@ -59,10 +59,10 @@ async def help_user(bot, update):
                 ],
                 [
                     InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
-                    InlineKeyboardButton('Thumbnail', callback_data = "about")
+                    InlineKeyboardButton('Thumbnail', callback_data = "cthumb")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "cthumb"),
+                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
                     InlineKeyboardButton('ABOUT', callback_data = "about")
                 ]
             ]
