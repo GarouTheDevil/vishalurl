@@ -54,10 +54,10 @@ async def button(bot, update):
                 ],
                 [
                     InlineKeyboardButton('Url Uploading', callback_data = "urlupload"),
-                    InlineKeyboardButton('Thumbnail', callback_data = "cthumb")
+                    InlineKeyboardButton('Thumbnail', callback_data = "customthumb")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
+                    InlineKeyboardButton('BACK', callback_data = "start"),
                     InlineKeyboardButton('ABOUT', callback_data = "about")
                 ]
             ]
