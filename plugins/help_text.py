@@ -64,6 +64,9 @@ async def help_user(bot, update):
                 [
                     InlineKeyboardButton('BACK', callback_data = "start"),
                     InlineKeyboardButton('ABOUT', callback_data = "about")
+                ],
+                [
+                    InlineKeyboardButton('CLOSE', callback_data = "close")
                 ]
             ]
         )
