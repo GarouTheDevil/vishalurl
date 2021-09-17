@@ -1,11 +1,10 @@
-# (c) Mrvishal2k2
-# the logging shits 🤦🏻‍♂️
+# (c) Modified By Devil0278
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# imports 🤷🏻‍♂️
+# imports 
 from datetime import datetime
 import os
 import requests
@@ -34,7 +33,7 @@ from helper_funcs.display_progress import progress_for_pyrogram
 from pyrogram import Client, Filters, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["Transfershupload"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["anonyupload"]))
 async def convert_to_file(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
