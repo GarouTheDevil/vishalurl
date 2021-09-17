@@ -34,7 +34,7 @@ from helper_funcs.display_progress import progress_for_pyrogram
 from pyrogram import Client, Filters, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["bayupload"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["Transfershupload"]))
 async def convert_to_file(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
