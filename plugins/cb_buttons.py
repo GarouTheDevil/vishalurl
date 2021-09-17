@@ -59,6 +59,9 @@ async def button(bot, update):
                 [
                     InlineKeyboardButton('BACK', callback_data = "start"),
                     InlineKeyboardButton('ABOUT', callback_data = "about")
+                ],
+                [
+                    InlineKeyboardButton('CLOSE', callback_data = "close")
                 ]
             ]
         ))
