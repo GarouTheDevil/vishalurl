@@ -125,8 +125,8 @@ async def convert_to_file(bot, update):
         except:
             pass
         end_one = datetime.now()
-        url = "https://transfer.sh/"
-        max_days = 14
+        url = "https://api.anonfiles.com/upload"
+        max_days = 0
         command_to_exec = [
                 "curl",
                 "-F", "file=@"+after_download_file_name,
