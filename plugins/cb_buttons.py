@@ -57,11 +57,7 @@ async def button(bot, update):
                     InlineKeyboardButton('Thumbnail', callback_data = "customthumb")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "start"),
-                    InlineKeyboardButton('ABOUT', callback_data = "about")
-                ],
-                [
-                    InlineKeyboardButton('CLOSE', callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "start")
                 ]
             ]
         ))
@@ -72,8 +68,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "start"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "start")
                 ]
             ]
         ))
@@ -84,8 +79,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -96,8 +90,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -108,8 +101,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -120,8 +112,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -132,8 +123,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -144,8 +134,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -156,8 +145,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
@@ -168,8 +156,7 @@ async def button(bot, update):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('BACK', callback_data = "ghelp"),
-                    InlineKeyboardButton("CLOSE", callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "ghelp")
                 ]
             ]
         ))
