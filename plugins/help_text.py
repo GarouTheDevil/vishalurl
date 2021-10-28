@@ -62,11 +62,7 @@ async def help_user(bot, update):
                     InlineKeyboardButton('Thumbnail', callback_data = "customthumb")
                 ],
                 [
-                    InlineKeyboardButton('BACK', callback_data = "start"),
-                    InlineKeyboardButton('ABOUT', callback_data = "about")
-                ],
-                [
-                    InlineKeyboardButton('CLOSE', callback_data = "close")
+                    InlineKeyboardButton('BACK', callback_data = "start")
                 ]
             ]
         )
@@ -132,9 +128,7 @@ async def about(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton("START", callback_data = "start"),
-                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
-                        InlineKeyboardButton("CLOSE", callback_data = "close")
+                        InlineKeyboardButton("BACK", callback_data = "start")
                 ]
             ]
         ),
